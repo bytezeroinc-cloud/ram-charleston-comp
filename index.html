@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Home Builder in Charleston, SC | RAM Construction Charleston</title>
+<meta name="description" content="RAM Construction Charleston designs, prices and builds custom homes in-house for Mount Pleasant, Isle of Palms, Sullivan's Island and Daniel Island. Fixed bids and a 3D walk-through before we build.">
+<meta property="og:title" content="RAM Construction Charleston · Custom homes drawn for the Lowcountry">
+<meta property="og:image" content="img/w/hero-lowcountry-custom-home-marsh-golden-hour-2400.webp">
+<link rel="icon" href="img/brand/ram-logo--bw.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/w/hero-lowcountry-custom-home-marsh-golden-hour-2400.webp" media="(min-width: 800px)">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ── Fanlight II · The Arcade · RAM Construction Charleston (Black + Amber Red) ─────────── */
+:root{
+  --black:#0B0B0C;
+  --black-night:#050506;
+  --red:#AA0926;
+  --amber:#E23C41;
+  --tint:#ECECEC;
+  --alabaster:#F3F3F3;
+  --ink:#040406;
+  --text:#18181A;
+  --muted:#5E5E63;
+  --rule:rgba(11,11,12,.16);
+  --rule-lt:rgba(243,243,243,.18);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --arch:9999px 9999px 0 0;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --wrap:min(1320px,calc(100vw - 48px));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--alabaster);color:var(--text);font:400 17px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.wrap{width:var(--wrap);margin-inline:auto}
+em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
+.arch{border-radius:var(--arch);overflow:hidden;background:#111}
+.arch img{width:100%;height:100%;object-fit:cover}
+
+/* folio eyebrow: roman numeral + arch mark */
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font:500 11.5px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--red)}
+.eyebrow i{font:italic 500 17px/1 var(--serif);letter-spacing:.04em;color:inherit}
+.eyebrow::before{content:"";width:13px;height:15px;border:1.5px solid currentColor;border-bottom:0;border-radius:var(--arch)}
+.on-dark .eyebrow{color:var(--amber)}
+.h2{font:500 clamp(40px,4.9vw,70px)/1.02 var(--serif);letter-spacing:-.01em;color:var(--black)}
+.h2 em{color:var(--red)}
+.on-dark .h2{color:var(--alabaster)}
+.on-dark .h2 em{color:var(--amber)}
+.lede{font:300 19px/1.7 var(--sans);color:var(--muted);max-width:52ch}
+.on-dark .lede{color:rgba(243,243,243,.78)}
+.cap{font:400 11px/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:14px}
+.on-dark .cap{color:rgba(243,243,243,.55)}
+.sec-head{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end;margin-bottom:56px}
+.sec-head .h2{margin-top:22px}
+.sec-head .lede{justify-self:end;padding-bottom:10px}
+
+/* buttons: pills with a round icon disc */
+.btn{display:inline-flex;align-items:center;gap:14px;border-radius:999px;padding:7px 7px 7px 26px;font:500 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.btn .disc{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;transition:transform .35s var(--ease)}
+.btn:hover .disc{transform:translateX(3px) rotate(-45deg)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red .disc{background:#fff;color:var(--red)}
+.btn-red:hover{background:var(--black)}
+.btn-red:hover .disc{color:var(--black)}
+.btn-glass{background:rgba(243,243,243,.08);color:var(--alabaster);border:1px solid rgba(243,243,243,.38);backdrop-filter:blur(6px)}
+.btn-glass .disc{background:rgba(243,243,243,.14)}
+.btn-glass:hover{background:rgba(243,243,243,.18)}
+.more{display:inline-flex;align-items:center;gap:10px;font:500 11.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--black)}
+.more span{transition:transform .3s var(--ease)}
+.more:hover span{transform:translateX(4px)}
+.on-dark .more{color:var(--alabaster)}
+
+/* ── masthead header: lockup left, nav centre, line + door right; alabaster on scroll ─── */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;color:var(--alabaster);transition:background .45s var(--ease),color .45s var(--ease)}
+.hdr::before{content:"";position:absolute;inset:0 0 -70px;background:linear-gradient(rgba(5,5,6,.6),transparent);pointer-events:none;transition:opacity .4s}
+.hdr::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(243,243,243,.16);transition:background .4s}
+.hdr.is-solid{background:rgba(243,243,243,.94);backdrop-filter:blur(12px);color:var(--black)}
+.hdr.is-solid::before{opacity:0}
+.hdr.is-solid::after{background:var(--rule)}
+.hdr-row{position:relative;width:var(--wrap);margin:auto;height:88px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;transition:height .4s var(--ease)}
+.hdr.is-solid .hdr-row{height:76px}
+.lockup{display:flex;align-items:center;gap:18px}
+.lockup img{height:46px;width:auto;transition:height .4s var(--ease)}
+.hdr.is-solid .lockup img{height:40px}
+.lockup .wm{display:flex;flex-direction:column;gap:6px;padding-left:18px;border-left:1px solid rgba(243,243,243,.3);transition:border-color .4s}
+.hdr.is-solid .lockup .wm{border-color:var(--rule)}
+.lockup .wm b{font:600 17px/1 var(--serif);letter-spacing:.2em;text-transform:uppercase}
+.lockup .wm small{font:500 9px/1 var(--sans);letter-spacing:.36em;text-transform:uppercase;opacity:.72}
+.hdr-nav{display:flex;justify-content:center;gap:34px}
+.hdr-nav a{font:400 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.88;position:relative;padding:9px 0;white-space:nowrap}
+.hdr-nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.hdr-nav a:hover::after{transform:scaleX(1)}
+.hdr-cta{display:flex;align-items:center;gap:28px}
+.hdr-tel{font:italic 500 21px/1 var(--serif);letter-spacing:.01em;opacity:.92}
+.hdr .btn{padding:6px 6px 6px 20px;font-size:11.5px}
+.hdr .btn .disc{width:32px;height:32px}
+.hdr.is-solid .btn-glass{background:var(--red);color:#fff;border-color:var(--red)}
+.hdr.is-solid .btn-glass .disc{background:#fff;color:var(--red)}
+.hdr-m{display:none}
+
+/* ── hero ────────────────────────────────────────────────────────────── */
+.hero{position:relative;min-height:max(90vh,720px);display:flex;align-items:flex-end;color:var(--alabaster);overflow:hidden;background:var(--black-night)}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:62% 50%;transform:scale(1.06);animation:drift 28s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(5,5,6,.86) 0%,rgba(5,5,6,.62) 34%,rgba(5,5,6,.12) 58%,rgba(5,5,6,0) 70%),
+  linear-gradient(0deg,rgba(5,5,6,.66),rgba(5,5,6,0) 42%)}
+.hero-horn{position:absolute;left:-4%;bottom:-16%;width:min(760px,60vw);color:var(--amber);opacity:.22;z-index:1;pointer-events:none}
+.hero-horn path{fill:none;stroke:currentColor;stroke-width:1.4;vector-effect:non-scaling-stroke}
+.js .hero-horn path{stroke-dasharray:2600;stroke-dashoffset:2600;animation:draw 4.2s .6s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-in{position:relative;z-index:2;width:var(--wrap);margin:auto;padding:150px 0 96px}
+.kicker{display:flex;align-items:center;gap:12px;font:500 12px/1.5 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:rgba(243,243,243,.9);margin-bottom:30px}
+.kicker::before{content:"";flex:none;width:34px;height:2px;background:var(--amber)}
+.hero h1{font:500 clamp(52px,6.8vw,106px)/.97 var(--serif);letter-spacing:-.015em}
+.hero h1 em{color:var(--amber);font-weight:400}
+.w{display:inline-block}
+.js .w{opacity:0;transform:translateY(.45em);animation:rise 1.1s var(--ease) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero .lede{margin-top:28px;color:rgba(243,243,243,.86);max-width:46ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.chips{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;padding-top:22px;border-top:1px solid var(--rule-lt);max-width:660px}
+.chips li{list-style:none;font:400 12.5px/1.4 var(--sans);letter-spacing:.08em;color:rgba(243,243,243,.8);display:flex;align-items:baseline;gap:9px}
+.chips li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber);align-self:center}
+.cyc{display:inline-grid;margin-left:6px}
+.cyc b{grid-area:1/1;font:italic 500 16px/1.2 var(--serif);letter-spacing:.02em;color:var(--alabaster);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.cyc b.out{opacity:0;transform:translateY(-.5em)}
+.cyc b.in{opacity:0;transform:translateY(.5em);transition:none}
+.hero-note{position:absolute;right:24px;bottom:26px;z-index:2;font:400 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,243,243,.55)}
+
+/* ── the ledger welded to the hero base: three facts, hairlines, no boxes ─────────── */
+.ledger{background:var(--black);color:var(--alabaster);border-top:1px solid var(--rule-lt)}
+.ledger-row{display:grid;grid-template-columns:repeat(3,1fr)}
+.ledger-item{padding:40px 40px 40px 36px;display:grid;grid-template-columns:auto 1fr;gap:8px 22px;border-left:1px solid var(--rule-lt)}
+.ledger-item:first-child{border-left:0;padding-left:0}
+.ledger-item .mk{grid-row:span 2;width:36px;height:46px;border:1px solid var(--amber);border-bottom:0;border-radius:var(--arch);display:grid;place-items:end center;padding-bottom:6px;font:italic 500 19px/1 var(--serif);color:var(--amber)}
+.ledger-item h3{font:600 25px/1.1 var(--serif);color:var(--alabaster)}
+.ledger-item p{font:300 15px/1.6 var(--sans);color:rgba(243,243,243,.72)}
+
+/* ── the chapter: type beside a pair of fanlights ────────────────────── */
+.chapter{padding:130px 0 120px}
+.chapter-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:100px;align-items:center}
+.chapter .h2{margin:22px 0 28px}
+.facts{margin-top:44px;border-top:1px solid var(--rule)}
+.facts div{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule);font-size:15.5px}
+.facts dt{font:500 11px/1.9 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+.facts dd{color:var(--text)}
+.pair{display:grid;grid-template-columns:1.12fr .88fr;gap:24px;align-items:end}
+.pair .tall .arch{aspect-ratio:3/4.35}
+.pair .short .arch{aspect-ratio:3/3.3}
+.pair figcaption{border-top:1px solid var(--rule);padding-top:12px;margin-top:0}
+
+/* ── services · the arcade on the tint ───────────────────────────────── */
+.services{background:var(--tint);padding:120px 0}
+.arcade{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.bay{display:flex;flex-direction:column}
+.bay .arch{aspect-ratio:3/3.95}
+.bay .arch img{transition:transform 1.3s var(--ease)}
+.bay:hover .arch img{transform:scale(1.05)}
+.bay-body{padding:28px 0 0;display:flex;flex-direction:column;flex:1}
+.bay .n{font:italic 500 15px/1 var(--serif);letter-spacing:.06em;color:var(--red)}
+.bay h3{font:600 29px/1.1 var(--serif);color:var(--black);margin-top:10px}
+.bay p{font-size:15px;line-height:1.6;color:var(--muted);margin:12px 0 18px}
+.bay ul{list-style:none;border-top:1px solid var(--rule);margin-bottom:22px}
+.bay li{font-size:13px;letter-spacing:.06em;padding:9px 0;border-bottom:1px solid var(--rule);color:var(--text)}
+.bay .more{margin-top:auto}
+.svc-src{margin-top:40px;font:400 11px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ── the window · a walk-through drawn in four beats (black) ─────────── */
+.window{background:var(--black);padding:120px 0;color:var(--alabaster);position:relative;overflow:hidden}
+.window-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:70px;align-items:center}
+.window .h2{margin:22px 0 24px}
+.beats{list-style:none;display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:36px;padding-top:22px;border-top:1px solid var(--rule-lt)}
+.beats li{font:500 11px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:rgba(243,243,243,.38);display:flex;align-items:center;gap:10px}
+.beats li::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.pane{margin:0}
+.pane-arch{position:relative;aspect-ratio:16/11;border-radius:var(--arch);overflow:hidden;background:#000;isolation:isolate}
+.pane-arch .beat,.pane-arch .doors,.pane-arch .dip,.pane-video{position:absolute;inset:0}
+.pane-arch .beat img{width:100%;height:100%;object-fit:cover}
+.beat{opacity:0;will-change:transform,opacity}
+.b-marsh{opacity:1;transform-origin:50% 55%}
+.b-marsh img{object-position:50% 48%}
+.b-house{transform-origin:64% 46%}
+.b-house img{object-position:62% 50%}
+.b-room{transform-origin:50% 55%}
+.b-room img{object-position:55% 50%}
+.doors{opacity:0;display:flex}
+.doors span{flex:1;background:linear-gradient(90deg,#0a0a0b,#17171a);position:relative}
+.doors .dl{box-shadow:inset -1px 0 0 rgba(226,60,65,.75)}
+.doors .dr{box-shadow:inset 1px 0 0 rgba(226,60,65,.75)}
+.doors span::after{content:"";position:absolute;top:50%;width:3px;height:46px;margin-top:-23px;border-radius:2px;background:rgba(243,243,243,.3)}
+.doors .dl::after{right:18px}.doors .dr::after{left:18px}
+.dip{background:#000;opacity:0;pointer-events:none}
+.pane-video{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s}
+.pane.has-video .pane-video{opacity:1}
+.pane.has-video .beat,.pane.has-video .doors,.pane.has-video .dip{display:none}
+.pane .cap{margin-top:16px}
+/* the sequence, 16 s: the marsh opens · push in to the house · the door · the room */
+.js .b-marsh{animation:bMarsh 16s var(--ease) infinite}
+.js .b-house{animation:bHouse 16s var(--ease) infinite}
+.js .doors{animation:bDoors 16s linear infinite}
+.js .doors .dl{animation:bDoorL 16s var(--ease) infinite}
+.js .doors .dr{animation:bDoorR 16s var(--ease) infinite}
+.js .b-room{animation:bRoom 16s var(--ease) infinite}
+.js .dip{animation:bDip 16s linear infinite}
+.js .beats li:nth-child(1){animation:beat1 16s linear infinite}
+.js .beats li:nth-child(2){animation:beat2 16s linear infinite}
+.js .beats li:nth-child(3){animation:beat3 16s linear infinite}
+.js .beats li:nth-child(4){animation:beat4 16s linear infinite}
+@keyframes bMarsh{0%{opacity:1;transform:scale(1.18)}22%{opacity:1;transform:scale(1)}28%{opacity:0;transform:scale(.98)}100%{opacity:0;transform:scale(.98)}}
+@keyframes bHouse{0%,21%{opacity:0;transform:scale(1)}28%{opacity:1}58%{opacity:1;transform:scale(1.48)}63%,100%{opacity:0;transform:scale(1.48)}}
+@keyframes bDoors{0%,51%{opacity:0}55%,72%{opacity:1}74%,100%{opacity:0}}
+@keyframes bDoorL{0%,58%{transform:translateX(0)}70%,100%{transform:translateX(-102%)}}
+@keyframes bDoorR{0%,58%{transform:translateX(0)}70%,100%{transform:translateX(102%)}}
+@keyframes bRoom{0%,55%{opacity:0;transform:scale(1)}59%{opacity:1;transform:scale(1)}96%{opacity:1;transform:scale(1.08)}100%{opacity:0;transform:scale(1.08)}}
+@keyframes bDip{0%{opacity:1}4%{opacity:0}95%{opacity:0}100%{opacity:1}}
+@keyframes beat1{0%,26%{color:var(--amber)}27%,100%{color:rgba(243,243,243,.38)}}
+@keyframes beat2{0%,26%{color:rgba(243,243,243,.38)}27%,54%{color:var(--amber)}55%,100%{color:rgba(243,243,243,.38)}}
+@keyframes beat3{0%,54%{color:rgba(243,243,243,.38)}55%,70%{color:var(--amber)}71%,100%{color:rgba(243,243,243,.38)}}
+@keyframes beat4{0%,70%{color:rgba(243,243,243,.38)}71%,96%{color:var(--amber)}97%,100%{color:rgba(243,243,243,.38)}}
+
+/* ── where we build · the staggered colonnade (black) ────────────────── */
+.areas{background:var(--black);padding:120px 0 0;color:var(--alabaster);position:relative;overflow:hidden}
+.areas .watermark{position:absolute;right:-120px;top:40px;width:620px;color:var(--amber);opacity:.06}
+.acc{display:flex;gap:18px;align-items:stretch;height:640px;position:relative}
+.area{flex:1;min-width:0;display:flex;flex-direction:column;position:relative;transition:flex 1.1s var(--ease)}
+.area.is-open{flex:2.3}
+.area .arch{flex:1;min-height:0;position:relative;transition:margin-top 1.1s var(--ease)}
+.area:nth-child(even) .arch{margin-top:56px}
+.area.is-open .arch{margin-top:0}
+.area .arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter .9s var(--ease)}
+.area:not(.is-open) .arch img{filter:brightness(.7) saturate(.85)}
+.area:hover .arch img{transform:scale(1.04)}
+.area-meta{padding:22px 0 0;border-top:1px solid var(--rule-lt);margin-top:20px;min-height:158px}
+.area-meta small{font:500 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--amber)}
+.area h3{font:500 clamp(24px,2.4vw,36px)/1.05 var(--serif);margin:10px 0 0}
+.area p{font-size:14.5px;line-height:1.6;color:rgba(243,243,243,.7);margin-top:10px}
+.area .more{margin-top:14px}
+.area p,.area .more{opacity:0;transform:translateY(8px);transition:opacity .6s var(--ease) .3s,transform .6s var(--ease) .3s}
+.area.is-open p,.area.is-open .more{opacity:1;transform:none}
+.area-note{margin-top:48px;font:400 11px/1.6 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:rgba(243,243,243,.5)}
+.marquee{margin-top:84px;border-top:1px solid var(--rule-lt);padding:26px 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;animation:slide 52s linear infinite}
+.marquee span{font:italic 400 clamp(34px,4vw,56px)/1 var(--serif);color:rgba(243,243,243,.9);padding:0 26px;display:inline-flex;align-items:center;gap:52px}
+.marquee span::after{content:"";width:16px;height:20px;border:1.5px solid var(--amber);border-bottom:0;border-radius:var(--arch)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ── coast (depth) ──────────────────────────────────────────────────── */
+.coast{padding:120px 0;background:var(--alabaster)}
+.coast-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}
+.coast-img{position:sticky;top:120px}
+.coast-img .arch{aspect-ratio:3/3.7}
+.ctable{width:100%;border-collapse:collapse;margin-top:40px}
+.ctable th{text-align:left;font:500 10.5px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--red);padding:0 0 14px;border-bottom:1px solid var(--black)}
+.ctable td{padding:20px 16px 20px 0;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.6;color:var(--muted)}
+.ctable td:first-child{font:600 21px/1.2 var(--serif);color:var(--black);width:30%}
+.ctable td:last-child{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);width:24%}
+
+/* ── process · four ruled columns, a photograph under each (black) ────── */
+.process{background:var(--black);padding:120px 0;color:var(--alabaster)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule-lt)}
+.stepc{padding:44px 32px 0 32px;border-left:1px solid var(--rule-lt);display:flex;flex-direction:column}
+.stepc:first-child{border-left:0;padding-left:0}
+.stepc:last-child{padding-right:0}
+.stepc .num{font:italic 400 92px/.8 var(--serif);color:var(--amber)}
+.stepc h3{font:600 29px/1.1 var(--serif);margin:28px 0 12px}
+.stepc p{font-size:15px;line-height:1.65;color:rgba(243,243,243,.74)}
+.stepc figure{margin-top:auto;padding-top:30px}
+.stepc figure img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.stepc figcaption{margin-top:12px;font:400 10.5px/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(243,243,243,.55)}
+
+/* ── the work, up close · a slider that bleeds to the right edge ─────── */
+.work{padding:120px 0 110px;background:var(--alabaster)}
+.work .sec-head{margin-bottom:44px}
+.slider{position:relative;margin-right:calc((var(--wrap) - 100vw)/2)}
+.track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 calc((100vw - var(--wrap))/2) 4px 0;cursor:grab;overscroll-behavior-x:contain}
+.track::-webkit-scrollbar{display:none}
+.track.is-drag{cursor:grabbing;scroll-snap-type:none}
+.slide{flex:none;scroll-snap-align:start;height:540px;position:relative;overflow:hidden;background:#111;margin:0}
+.slide img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.slide:hover img{transform:scale(1.04)}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:36px 18px 14px;color:#fff;background:linear-gradient(transparent,rgba(5,5,6,.74));font:400 12px/1.35 var(--sans);letter-spacing:.06em}
+.slide figcaption b{display:block;font:italic 500 20px/1.2 var(--serif);letter-spacing:0;margin-bottom:3px}
+.s-arch{width:460px;border-radius:var(--arch)}
+.s-w{width:640px}.s-m{width:520px}.s-t{width:380px}
+.slider-ui{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:26px;width:var(--wrap)}
+.slider-bar{flex:1;height:1px;background:var(--rule);position:relative}
+.slider-bar i{position:absolute;left:0;top:-1px;height:3px;width:20%;background:var(--red);transition:left .15s linear}
+.slider-nav{display:flex;gap:10px}
+.slider-nav button{width:48px;height:48px;border-radius:50%;border:1px solid var(--rule);background:transparent;color:var(--black);font:300 18px/1 var(--sans);cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.slider-nav button:hover{background:var(--black);color:var(--alabaster);border-color:var(--black)}
+
+/* ── credentials ────────────────────────────────────────────────────── */
+.creds{background:var(--black);padding:60px 0}
+.creds-row{display:grid;grid-template-columns:1.2fr 3fr;gap:50px;align-items:center}
+.creds p{font:500 26px/1.25 var(--serif);color:var(--alabaster)}
+.creds p em{color:var(--amber)}
+.plates{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.plates li{list-style:none;background:#fff;border-radius:6px;height:96px;display:grid;place-items:center;padding:16px}
+.plates img{height:64px;width:auto;max-width:100%;object-fit:contain}
+
+/* ── FAQ · ruled, no boxes ───────────────────────────────────────────── */
+.faq{padding:120px 0;background:var(--tint)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
+.faq-side .arch{aspect-ratio:3/3.3;margin-top:40px}
+.faq details{border-top:1px solid var(--rule)}
+.faq details:last-child{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;gap:24px;align-items:center;font:600 23px/1.25 var(--serif);color:var(--black)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--rule);display:grid;place-items:center;font:300 20px/1 var(--sans);color:var(--red);transition:transform .35s var(--ease),background .35s,color .35s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--black);color:var(--alabaster);border-color:var(--black)}
+.faq .ans{padding:0 60px 28px 0;color:var(--muted);font-size:16px;max-width:62ch}
+
+/* ── the door ───────────────────────────────────────────────────────── */
+.door{position:relative;padding:120px 0;color:var(--alabaster);overflow:hidden;background:var(--black-night)}
+.door-bg{position:absolute;inset:0}
+.door-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.door::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,6,.93) 30%,rgba(5,5,6,.55))}
+.door-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:stretch}
+.door .h2{font-size:clamp(46px,5.6vw,88px);margin:22px 0 24px}
+.phone{margin-top:44px;padding-top:26px;border-top:1px solid var(--rule-lt)}
+.phone small{font:500 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--amber)}
+.phone a{display:block;font:500 clamp(40px,4.4vw,62px)/1.1 var(--serif);margin-top:10px}
+.phone span{font-size:13px;color:rgba(243,243,243,.55)}
+.form{background:var(--alabaster);color:var(--text);border-radius:var(--arch);padding:188px 56px 44px;position:relative}
+.form-crown{position:absolute;top:44px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.form-crown svg{width:120px;height:60px}
+.form-crown svg line{stroke:rgba(11,11,12,.35)}
+.form h3{font:italic 500 32px/1 var(--serif);color:var(--black)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px 28px}
+.field{display:flex;flex-direction:column;padding-top:18px}
+.field.full{grid-column:1/-1}
+.field label{font:500 10.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+.field input,.field select,.field textarea{font:400 16.5px/1.4 var(--sans);color:var(--text);background:transparent;border:0;border-bottom:1px solid rgba(11,11,12,.35);padding:12px 0 10px;border-radius:0;outline:none;width:100%;min-width:0;appearance:none}
+.field textarea{resize:vertical;min-height:84px}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--black);box-shadow:0 1px 0 var(--black)}
+.form .btn{margin-top:32px;border:0;cursor:pointer}
+.form-note{margin-top:16px;font-size:12.5px;color:var(--muted)}
+
+/* ── colophon footer ────────────────────────────────────────────────── */
+.ftr{background:var(--black-night);color:rgba(243,243,243,.76);font-size:15px}
+.ftr-sign{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;padding:64px 0 52px;border-bottom:1px solid var(--rule-lt)}
+.ftr-sign .lockup{gap:24px}
+.ftr-sign .lockup img{height:86px}
+.ftr-sign .lockup .wm{gap:8px;padding-left:24px;border-color:rgba(243,243,243,.25)}
+.ftr-sign .lockup .wm b{font-size:21px;color:var(--alabaster)}
+.ftr-sign .lockup .wm small{font-size:10px}
+.ftr-line{justify-self:end;text-align:right}
+.ftr-line .fan{width:96px;height:48px;margin:0 0 18px auto;display:block}
+.ftr-line .fan line{stroke:rgba(243,243,243,.4)}
+.ftr-line p{font:500 clamp(30px,3.1vw,42px)/1.15 var(--serif);color:var(--alabaster);max-width:23ch}
+.ftr-line p em{color:var(--amber)}
+.ftr-cols{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;padding:52px 0 0}
+.ftr-col{border-left:1px solid var(--rule-lt);padding-left:34px}
+.ftr-col:first-child{border-left:0;padding-left:0;padding-right:40px}
+.ftr h4{display:inline-flex;align-items:center;gap:12px;font:500 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--amber);margin-bottom:22px}
+.ftr h4::before{content:"";width:12px;height:14px;border:1.5px solid currentColor;border-bottom:0;border-radius:var(--arch)}
+.ftr li{list-style:none;padding:6px 0}
+.ftr a:hover{color:#fff}
+.ftr-tel{display:block;font:500 clamp(30px,2.6vw,38px)/1.1 var(--serif);color:var(--alabaster);margin:2px 0 10px}
+.ftr-col p{line-height:1.7}
+.ftr-col p+p{margin-top:12px}
+.ftr-base{margin-top:56px;padding:24px 0 32px;border-top:1px solid var(--rule-lt);display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:12px;color:rgba(243,243,243,.5)}
+
+/* mobile menu */
+.mnav{position:fixed;inset:0;z-index:60;background:var(--black-night);color:var(--alabaster);display:flex;flex-direction:column;padding:22px 24px 36px;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.mnav.is-open{opacity:1;visibility:visible}
+.mnav-top{display:flex;justify-content:space-between;align-items:center}
+.mnav-top button{width:46px;height:46px;border-radius:50%;border:1px solid rgba(243,243,243,.4);background:none;color:var(--alabaster);font:300 26px/1 var(--sans);cursor:pointer}
+.mnav nav{margin:auto 0;display:flex;flex-direction:column}
+.mnav nav a{font:500 38px/1.25 var(--serif);padding:6px 0;border-bottom:1px solid var(--rule-lt)}
+.mnav nav a em{color:var(--amber)}
+.mnav .mtel{font:italic 500 26px/1 var(--serif);margin-top:30px}
+.mnav .btn{align-self:flex-start;margin-top:22px}
+
+/* reveal (progressive) */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.js .rv.is-in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.1s}.js .rv.d2{transition-delay:.2s}.js .rv.d3{transition-delay:.3s}
+
+/* ── responsive ─────────────────────────────────────────────────────── */
+@media (max-width:1360px){.hdr-tel{display:none}.hdr-nav{gap:28px}}
+@media (max-width:1180px){
+  .hdr-nav,.hdr-cta{display:none}
+  .hdr-row{grid-template-columns:auto 1fr auto;height:78px}
+  .hdr.is-solid .hdr-row{height:70px}
+  .lockup img{height:42px}
+  .lockup .wm b{font-size:15px}
+  .hdr-m{display:flex;gap:10px;justify-content:flex-end;grid-column:3}
+  .hdr-m a,.hdr-m button{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(243,243,243,.4);background:rgba(5,5,6,.3);color:var(--alabaster);cursor:pointer}
+  .hdr.is-solid .hdr-m a,.hdr.is-solid .hdr-m button{border-color:var(--rule);background:transparent;color:var(--black)}
+  .arcade{grid-template-columns:repeat(2,1fr)}
+  .acc{height:540px}
+  .window-grid{grid-template-columns:1fr;gap:44px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .stepc:nth-child(3){border-left:0;padding-left:0}
+  .stepc:nth-child(n+3){border-top:1px solid var(--rule-lt);margin-top:44px}
+  .plates{grid-template-columns:repeat(3,1fr)}
+  .ftr-cols{grid-template-columns:1fr 1fr;gap:44px 0}
+  .ftr-col:nth-child(3){border-left:0;padding-left:0}
+}
+@media (max-width:860px){
+  :root{--wrap:calc(100vw - 32px)}
+  body{font-size:16px}
+  .hdr .lockup .wm{display:none}
+  .hero{min-height:max(92vh,640px)}
+  .hero-img img{object-position:72% 50%}
+  .hero::after{background:linear-gradient(0deg,rgba(5,5,6,.95) 0%,rgba(5,5,6,.82) 55%,rgba(5,5,6,.45) 100%)}
+  .hero h1 em{color:#FF5E62}
+  .hero-in{padding:120px 0 56px}
+  .hero-note{display:none}
+  .hero h1{font-size:46px;line-height:1.02}
+  .hero h1 br{display:none}
+  .kicker{font-size:10.5px;letter-spacing:.24em;margin-bottom:20px}
+  .chips{gap:8px 18px}
+  .ledger-row{grid-template-columns:1fr}
+  .ledger-item{border-left:0;padding:22px 0;border-top:1px solid var(--rule-lt)}
+  .ledger-item:first-child{border-top:0}
+  .chapter{padding:90px 0}
+  .chapter-grid,.sec-head,.walk-in,.coast-grid,.faq-grid,.door-grid,.creds-row{grid-template-columns:1fr;gap:44px}
+  .sec-head{margin-bottom:44px}
+  .sec-head .lede{justify-self:start;padding-bottom:0}
+  .facts div{grid-template-columns:1fr;gap:4px}
+  .pair{gap:14px}
+  .pair figcaption{font-size:9.5px;letter-spacing:.12em}
+  .services,.process,.work,.coast,.faq,.door{padding:90px 0}
+  .areas{padding-top:90px}
+  .arcade{grid-template-columns:1fr;gap:44px}
+  .bay .arch{aspect-ratio:4/3.5}
+  .acc{display:grid;grid-template-columns:1fr 1fr;gap:18px;height:auto}
+  .area .arch{flex:none;aspect-ratio:3/4.15;margin-top:0!important}
+  .area:not(.is-open) .arch img{filter:none}
+  .area-meta{min-height:0}
+  .area h3{font-size:24px}
+  .area p,.area .more{display:none}
+  .window{padding:90px 0}
+  .window-grid{gap:36px}
+  .pane-arch{aspect-ratio:4/3.6}
+  .beats{gap:10px 18px}
+  .coast-img{position:static}
+  .ctable td:last-child{display:none}
+  .ctable td:first-child{width:40%;font-size:18px}
+  .steps{grid-template-columns:1fr}
+  .stepc{border-left:0;padding:36px 0 0}
+  .stepc:nth-child(n+2){border-top:1px solid var(--rule-lt);margin-top:40px}
+  .stepc .num{font-size:70px}
+  .slide{height:380px}
+  .s-arch,.s-w,.s-m,.s-t{width:78vw}
+  .slider-ui{margin-top:20px}
+  .plates{grid-template-columns:repeat(2,1fr)}
+  .plates li:last-child{grid-column:1/-1}
+  .faq summary{font-size:19px;padding:20px 0}
+  .faq .ans{padding:0 0 22px}
+  .form{padding:150px 22px 34px}
+  .form-crown{top:34px}
+  .form-crown svg{width:90px;height:45px}
+  .form h3{font-size:25px}
+  .fgrid{grid-template-columns:1fr}
+  .ftr-sign{grid-template-columns:1fr;gap:40px;padding:64px 0 44px}
+  .ftr-sign .lockup img{height:64px}
+  .ftr-line{justify-self:start;text-align:left}
+  .ftr-line .fan{margin:0 0 16px 0}
+  .ftr-cols{grid-template-columns:1fr;gap:36px;padding-top:44px}
+  .ftr-col{border-left:0;padding-left:0;border-top:1px solid var(--rule-lt);padding-top:30px}
+  .ftr-col:first-child{border-top:0;padding-top:0;padding-right:0}
+  .ftr-base{margin-top:44px}
+  .marquee{margin-top:70px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .w,.js .rv{opacity:1!important;transform:none!important}
+  .js .hero-horn path{stroke-dashoffset:0}
+  .hero-img img{transform:none}
+  .js .b-marsh{opacity:0}.js .b-room{opacity:1}.js .beats li:nth-child(4){color:var(--amber)}
+}
+</style>
+</head>
+<body>
+
+<!-- ═════ masthead ═════ -->
+<header class="hdr" id="hdr">
+  <div class="hdr-row">
+    <a class="lockup" href="#top" aria-label="RAM Construction Charleston, home">
+      <img src="img/brand/ram-logo--bw.svg" alt="RAM Construction" width="38" height="46" loading="eager">
+      <span class="wm"><b>RAM Construction</b><small>Charleston · South Carolina</small></span>
+    </a>
+    <nav class="hdr-nav" aria-label="Primary">
+      <a href="#services">What we build</a>
+      <a href="#areas">Where we build</a>
+      <a href="#work">The work</a>
+      <a href="#process">Process</a>
+    </nav>
+    <div class="hdr-cta">
+      <a class="hdr-tel" href="tel:+18430000000">(843) 000-0000</a>
+      <a class="btn btn-glass" href="#door">Begin a home <span class="disc" aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="hdr-m">
+      <a href="tel:+18430000000" aria-label="Call RAM Construction Charleston"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></a>
+      <button type="button" aria-label="Open menu" aria-controls="mnav" aria-expanded="false" id="mopen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h18M3 16h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" role="dialog" aria-label="Menu">
+  <div class="mnav-top"><img src="img/brand/ram-logo--bw.svg" alt="RAM Construction" width="41" height="50"><button type="button" id="mclose" aria-label="Close menu">&times;</button></div>
+  <nav aria-label="Mobile">
+    <a href="#services">What we <em>build</em></a><a href="#areas">Where we <em>build</em></a><a href="#work">The work</a><a href="#process">Process</a><a href="#faq">Questions</a>
+  </nav>
+  <a class="mtel" href="tel:+18430000000">(843) 000-0000</a>
+  <a class="btn btn-red" href="#door">Begin a home <span class="disc" aria-hidden="true">&rarr;</span></a>
+</div>
+
+<main id="top">
+<!-- ═════ hero ═════ -->
+<section class="hero">
+  <div class="hero-img">
+    <picture>
+      <source media="(max-width:800px)" srcset="img/w/hero-lowcountry-custom-home-marsh-golden-hour-1200.webp">
+      <img src="img/w/hero-lowcountry-custom-home-marsh-golden-hour-2400.webp" width="2400" height="1340" fetchpriority="high" alt="A white Lowcountry custom home with double piazzas and a metal roof on the edge of a golden salt marsh at sunset, live oaks with Spanish moss either side">
+    </picture>
+  </div>
+  <svg class="hero-horn" viewBox="190 128 528 488" aria-hidden="true"><path id="hornpath" d=""/></svg>
+  <div class="hero-in">
+    <p class="kicker">Custom home builder · Charleston, SC</p>
+    <h1>
+      <span class="w" style="animation-delay:.15s">Homes</span> <span class="w" style="animation-delay:.25s">drawn</span> <span class="w" style="animation-delay:.35s">for</span> <span class="w" style="animation-delay:.45s">the</span><br>
+      <em><span class="w" style="animation-delay:.6s">marsh</span> <span class="w" style="animation-delay:.7s">and</span> <span class="w" style="animation-delay:.8s">the</span> <span class="w" style="animation-delay:.9s">light.</span></em>
+    </h1>
+    <p class="lede rv is-in">RAM designs, prices and builds every home in-house, then lets you walk through it in 3D before a board is cut.</p>
+    <div class="hero-cta">
+      <a class="btn btn-red" href="#door">Begin your home <span class="disc" aria-hidden="true">&rarr;</span></a>
+      <a class="btn btn-glass" href="tel:+18430000000">Call the 843 line <span class="disc" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span></a>
+    </div>
+    <ul class="chips">
+      <li>Design-build since 2004</li>
+      <li>SC-licensed division</li>
+      <li>Serving <span class="cyc" id="cyc"><b>Mount Pleasant</b></span></li>
+    </ul>
+  </div>
+  <p class="hero-note">Illustrative Lowcountry scene</p>
+</section>
+
+<!-- ═════ the ledger, welded to the hero base ═════ -->
+<div class="ledger">
+  <div class="wrap ledger-row">
+    <div class="ledger-item rv"><span class="mk">i</span><h3>One firm, one drawing</h3><p>Architects, designers and builders under one contract. Nothing lost between the plan and the site.</p></div>
+    <div class="ledger-item rv d1"><span class="mk">ii</span><h3>A fixed bid</h3><p>Every allowance listed line by line, so you know the number before you sign.</p></div>
+    <div class="ledger-item rv d2"><span class="mk">iii</span><h3>Walk it before we build</h3><p>An immersive 3D tour of every room and finish, exactly as it will be delivered.</p></div>
+  </div>
+</div>
+
+<!-- ═════ the chapter ═════ -->
+<section class="chapter" id="about">
+  <div class="wrap chapter-grid">
+    <div class="rv">
+      <span class="eyebrow"><i>I</i> The Charleston chapter</span>
+      <h2 class="h2">Twenty years of RAM, <em>now on the coast.</em></h2>
+      <p class="lede">RAM Construction has designed and built custom homes in Charlotte since 2004. RAM Construction Charleston brings the same in-house architects, fixed bids and 3D walk-throughs to the Lowcountry, under its own South Carolina license.</p>
+      <dl class="facts">
+        <div><dt>Since</dt><dd>2004, as a complete in-house design-build firm</dd></div>
+        <div><dt>In-house</dt><dd>Architects, building specialists and designers</dd></div>
+        <div><dt>Recognition</dt><dd>Award-winning homes, several years on Charlotte's Dilworth Home Tour</dd></div>
+        <div><dt>Charleston</dt><dd>A division of RAM Construction, licensed in South Carolina</dd></div>
+      </dl>
+    </div>
+    <div class="pair rv d1">
+      <figure class="tall"><div class="arch"><img src="img/w/charleston-piazza-evening-1200.webp" width="1200" height="1607" loading="lazy" alt="A deep Charleston piazza at dusk with white columns, rocking chairs and copper gas lanterns, live oaks and marsh beyond"></div><figcaption class="cap">Illustrative · a Charleston piazza at dusk</figcaption></figure>
+      <figure class="short"><div class="arch"><img src="img/w/ram-brass-bridge-faucet-800.webp" width="800" height="534" loading="lazy" alt="Unlacquered brass bridge faucet over a white apron sink in a RAM kitchen"></div><figcaption class="cap">RAM home · Charlotte, NC</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═════ services · the arcade ═════ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow"><i>II</i> What we build</span><h2 class="h2">Four ways to <em>come home</em> to the Lowcountry.</h2></div>
+      <p class="lede rv d1">Every service runs through the same in-house team, the same fixed bid and the same 3D walk-through. Only the house changes.</p>
+    </div>
+    <div class="arcade">
+      <a class="bay rv" href="#door">
+        <div class="arch"><img src="img/w/ram-two-storey-porches-800.webp" width="800" height="569" loading="lazy" alt="A RAM custom home with two storeys of deep covered porches and black steel railings"></div>
+        <div class="bay-body"><span class="n">i</span><h3>Custom Homes</h3><p>Ground-up homes drawn for your lot, priced as a fixed bid.</p><ul><li>Lot evaluation</li><li>In-house architecture</li><li>Fixed-bid pricing</li></ul><span class="more">Custom homes <span>&rarr;</span></span></div>
+      </a>
+      <a class="bay rv d1" href="#door">
+        <div class="arch"><img src="img/w/isle-of-palms-elevated-beach-house-700.webp" width="700" height="938" loading="lazy" alt="Illustrative elevated beach house on white pilings behind grassy dunes on Isle of Palms"></div>
+        <div class="bay-body"><span class="n">ii</span><h3>Coastal &amp; Elevated</h3><p>Raised beach and marsh-front homes built for flood, wind and salt.</p><ul><li>Flood-zone design</li><li>Wind-rated envelope</li><li>Salt-air materials</li></ul><span class="more">Coastal homes <span>&rarr;</span></span></div>
+      </a>
+      <a class="bay rv d2" href="#door">
+        <div class="arch"><img src="img/w/ram-craftsman-porte-cochere-800.webp" width="800" height="533" loading="lazy" alt="A RAM craftsman home with a screened porch and stone porte-cochere"></div>
+        <div class="bay-body"><span class="n">iii</span><h3>Renovations</h3><p>Whole-home remodels and additions for the right lot and the wrong layout.</p><ul><li>Whole-home remodels</li><li>Additions</li><li>Historic review</li></ul><span class="more">Renovations <span>&rarr;</span></span></div>
+      </a>
+      <a class="bay rv d3" href="#door">
+        <div class="arch"><img src="img/w/ram-3d-rendering-modern-800.webp" width="800" height="600" loading="lazy" alt="A RAM 3D rendering of a modern three-storey home with a motor court"></div>
+        <div class="bay-body"><span class="n">iv</span><h3>Design-Build</h3><p>One firm, one contract, one drawing and one budget, start to keys.</p><ul><li>One contract</li><li>One accountable team</li><li>3D walk-through</li></ul><span class="more">Design-build <span>&rarr;</span></span></div>
+      </a>
+    </div>
+    <p class="svc-src">Bays i, iii and iv: RAM homes and renderings, Charlotte, NC · Bay ii: illustrative</p>
+  </div>
+</section>
+
+<!-- ═════ the window · a walk-through in four beats ═════ -->
+<section class="window on-dark" id="walk">
+  <div class="wrap window-grid">
+    <div class="rv">
+      <span class="eyebrow"><i>III</i> Before a board is cut</span>
+      <h2 class="h2">Stand in the room. <em>Watch the light arrive.</em></h2>
+      <p class="lede">RAM's immersive 3D plans let you walk every room of your home exactly as you would in life: the view from the kitchen, the evening sun on the porch floor, every fixture and finish. You approve the home you have already walked through, and we build that home.</p>
+      <ol class="beats" aria-hidden="true"><li>The marsh</li><li>The house</li><li>The door</li><li>The room</li></ol>
+    </div>
+    <figure class="pane rv d1">
+      <div class="pane-arch" role="img" aria-label="A walk-through drawn in four beats: the marsh, the house across the creek, its front door, and a sitting room open to the porch and the same marsh">
+        <div class="beat b-marsh"><img src="img/w/tidal-creek-marsh-aerial-dusk-2400.webp" width="2400" height="1340" loading="lazy" alt=""></div>
+        <div class="beat b-house"><img src="img/w/hero-lowcountry-custom-home-marsh-golden-hour-2400.webp" width="2400" height="1340" loading="lazy" alt=""></div>
+        <div class="beat b-room"><img src="img/w/great-room-marsh-view-golden-hour-2400.webp" width="2400" height="1340" loading="lazy" alt=""></div>
+        <div class="doors" aria-hidden="true"><span class="dl"></span><span class="dr"></span></div>
+        <div class="dip" aria-hidden="true"></div>
+        <!-- when the rendered walk-through clip exists, set data-src and it replaces the drawn sequence -->
+        <video class="pane-video" muted loop playsinline preload="none" poster="img/w/great-room-marsh-view-golden-hour-1200.webp"></video>
+      </div>
+      <figcaption class="cap">The walk-through, drawn from the plans · illustrative scenes</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═════ where we build · the colonnade ═════ -->
+<section class="areas on-dark" id="areas">
+  <svg class="watermark" viewBox="190 128 528 488" aria-hidden="true"><use href="#glyphdef"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow"><i>IV</i> Where we build</span><h2 class="h2">Four towns, <em>four sets of rules.</em></h2></div>
+      <p class="lede rv d1">Protected oaks, design review boards, flood maps and salt air. We draw to each town's conditions from the first sketch.</p>
+    </div>
+    <div class="colonnade acc" id="acc">
+      <a class="area is-open rv" href="#door"><div class="arch"><img src="img/w/mount-pleasant-live-oak-drive-700.webp" width="700" height="938" loading="lazy" alt="Illustrative gravel drive under live oaks with Spanish moss leading to a white home in Mount Pleasant"></div><div class="area-meta"><small>Charleston County</small><h3>Mount Pleasant</h3><p>Marsh-front lots, Old Village cottages and grand protected trees.</p><span class="more">Building in Mount Pleasant <span>&rarr;</span></span></div></a>
+      <a class="area rv d1" href="#door"><div class="arch"><img src="img/w/isle-of-palms-elevated-beach-house-700.webp" width="700" height="938" loading="lazy" alt="Illustrative elevated beach house behind the dunes on Isle of Palms"></div><div class="area-meta"><small>Charleston County</small><h3>Isle of Palms</h3><p>Elevated beach homes built for wind, water and salt.</p><span class="more">Building on Isle of Palms <span>&rarr;</span></span></div></a>
+      <a class="area rv d2" href="#door"><div class="arch"><img src="img/w/sullivans-island-island-cottage-700.webp" width="700" height="938" loading="lazy" alt="Illustrative raised island cottage with a screened porch and palmettos on Sullivan's Island"></div><div class="area-meta"><small>Charleston County</small><h3>Sullivan's Island</h3><p>Island homes that fit a small, historic town and its design review.</p><span class="more">Building on Sullivan's <span>&rarr;</span></span></div></a>
+      <a class="area rv d3" href="#door"><div class="arch"><img src="img/w/daniel-island-waterfront-home-700.webp" width="700" height="938" loading="lazy" alt="Illustrative waterfront home with a long dock over the marsh at sunset on Daniel Island"></div><div class="area-meta"><small>Berkeley County</small><h3>Daniel Island</h3><p>Custom homes drawn inside the community's architectural guidelines.</p><span class="more">Building on Daniel Island <span>&rarr;</span></span></div></a>
+    </div>
+    <p class="area-note">Area scenes are illustrative. No street addresses are published.</p>
+  </div>
+  <div class="marquee" aria-hidden="true"><div class="marquee-track">
+    <span>Mount Pleasant</span><span>Isle of Palms</span><span>Sullivan's Island</span><span>Daniel Island</span><span>Charleston</span>
+    <span>Mount Pleasant</span><span>Isle of Palms</span><span>Sullivan's Island</span><span>Daniel Island</span><span>Charleston</span>
+  </div></div>
+</section>
+
+<!-- ═════ coast knowledge ═════ -->
+<section class="coast" id="coast">
+  <div class="wrap coast-grid">
+    <div class="coast-img rv"><div class="arch"><img src="img/w/tidal-creek-marsh-aerial-dusk-1200.webp" width="1200" height="670" loading="lazy" alt="Illustrative aerial view of a tidal creek winding through spartina marsh with a private dock at dusk"></div><p class="cap">Illustrative · tidal marsh, Charleston County</p></div>
+    <div class="rv d1">
+      <span class="eyebrow"><i>V</i> Building on the coast</span>
+      <h2 class="h2">Handled in the drawings, <em>not at the end.</em></h2>
+      <table class="ctable">
+        <thead><tr><th>Condition</th><th>What we do</th><th>Where it applies</th></tr></thead>
+        <tbody>
+          <tr><td>Flood elevation</td><td>Check the lot against the current flood maps first, then set finished floor, foundation and venting from the first sketch.</td><td>Marsh lots · the islands</td></tr>
+          <tr><td>Hurricane wind</td><td>Impact-rated openings, a continuous load path and roof tie-downs specified in the drawings.</td><td>Every coastal home</td></tr>
+          <tr><td>Salt air</td><td>Stainless fasteners, marine-grade finishes and siding chosen to last on the coast.</td><td>Isle of Palms · Sullivan's</td></tr>
+          <tr><td>Grand trees</td><td>Survey the canopy before we draw, so the house is sited around the oaks.</td><td>Mount Pleasant</td></tr>
+          <tr><td>Design review</td><td>Prepare the drawings, elevations and 3D views each board asks to see.</td><td>Old Village · Sullivan's · Daniel Island</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═════ process · four ruled columns ═════ -->
+<section class="process on-dark" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow"><i>VI</i> How a RAM home happens</span><h2 class="h2">From the lot <em>to the keys.</em></h2></div>
+      <p class="lede rv d1">One project manager from first sketch to final walk-through, with a site meeting every week and a written recap after each one.</p>
+    </div>
+    <div class="steps">
+      <div class="stepc rv"><span class="num">i</span><h3>Design</h3><p>We read the lot, then draw the plans, elevations and materials with you over the table.</p><figure><img src="img/w/ram-3d-rendering-modern-800.webp" width="800" height="600" loading="lazy" alt="RAM 3D design rendering of a modern home"><figcaption>The drawing · RAM rendering</figcaption></figure></div>
+      <div class="stepc rv d1"><span class="num">ii</span><h3>Fixed bid</h3><p>The same team prices the drawing. Allowances are listed line by line before you sign.</p><figure><img src="img/w/ram-kitchen-island-lanterns-800.webp" width="800" height="567" loading="lazy" alt="RAM kitchen with a marble island and iron lanterns"><figcaption>The allowances · RAM home, Charlotte</figcaption></figure></div>
+      <div class="stepc rv d2"><span class="num">iii</span><h3>Walk-through</h3><p>Tour every room in immersive 3D, down to fixtures and finishes, before construction.</p><figure><img src="img/w/ram-coffered-living-room-800.webp" width="800" height="534" loading="lazy" alt="Finished RAM living room with a coffered ceiling and fireplace"><figcaption>The room you toured · RAM home, Charlotte</figcaption></figure></div>
+      <div class="stepc rv d3"><span class="num">iv</span><h3>Build</h3><p>A dedicated RAM team builds exactly what you approved, with weekly site walk-throughs.</p><figure><img src="img/w/ram-stone-fireplace-pavilion-800.webp" width="800" height="533" loading="lazy" alt="Stone fireplace in a RAM outdoor pavilion with a wood ceiling"><figcaption>Delivered · RAM home, Charlotte</figcaption></figure></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════ the work, up close ═════ -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv"><span class="eyebrow"><i>VII</i> The work, up close</span><h2 class="h2">Brass, marble, stone <em>and a long porch.</em></h2></div>
+      <p class="lede rv d1">Every photograph here is a finished RAM home in Charlotte, NC. Charleston's own will join them as each home is completed.</p>
+    </div>
+    <div class="slider">
+      <div class="track" id="track" tabindex="0" aria-label="RAM homes, up close. Scroll sideways.">
+        <figure class="slide s-arch rv"><img src="img/w/ram-range-brass-kitchen-1600.webp" width="1600" height="1002" loading="lazy" alt="Black and brass range beneath a white tile wall in a RAM kitchen"><figcaption><b>The range wall</b>Kitchen · Charlotte, NC</figcaption></figure>
+        <figure class="slide s-m rv d1"><img src="img/w/ram-brass-tub-filler-800.webp" width="800" height="534" loading="lazy" alt="Brass floor-mounted tub filler beside plantation shutters"><figcaption><b>A brass tub filler</b>Primary bath · Charlotte</figcaption></figure>
+        <figure class="slide s-t rv d2"><img src="img/w/ram-pool-courtyard-800.webp" width="640" height="960" loading="lazy" alt="Pool and spa behind a RAM home with a screened porch"><figcaption><b>Pool court</b>Charlotte</figcaption></figure>
+        <figure class="slide s-w rv d3"><img src="img/w/ram-modern-home-balconies-1600.webp" width="1600" height="1123" loading="lazy" alt="A modern RAM home with stacked balconies and a landscaped front terrace"><figcaption><b>Two storeys of balconies</b>New build · Charlotte</figcaption></figure>
+        <figure class="slide s-m"><img src="img/w/ram-outdoor-fireplace-porch-800.webp" width="800" height="533" loading="lazy" alt="Covered porch with a stone outdoor fireplace and wood ceiling"><figcaption><b>Fireside porch</b>Charlotte</figcaption></figure>
+        <figure class="slide s-w"><img src="img/w/ram-screened-porch-wood-ceiling-800.webp" width="800" height="532" loading="lazy" alt="Screened porch with a vaulted wood ceiling and seating"><figcaption><b>The screened porch</b>Charlotte</figcaption></figure>
+        <figure class="slide s-m"><img src="img/w/ram-pool-terrace-800.webp" width="800" height="534" loading="lazy" alt="Long pool and stone terrace behind a RAM home"><figcaption><b>Pool terrace</b>Charlotte</figcaption></figure>
+        <figure class="slide s-m"><img src="img/w/ram-marble-bar-tap-800.webp" width="800" height="534" loading="lazy" alt="Brass tap set into a veined marble bar top in a RAM home"><figcaption><b>The bar tap</b>Marble · Charlotte</figcaption></figure>
+      </div>
+      <div class="slider-ui"><div class="slider-bar" aria-hidden="true"><i></i></div><div class="slider-nav"><button type="button" class="prev" aria-label="Previous">&larr;</button><button type="button" class="next" aria-label="Next">&rarr;</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════ credentials ═════ -->
+<section class="creds" aria-label="Credentials">
+  <div class="wrap creds-row">
+    <p class="rv">Built to <em>RAM's standard,</em> backed by the same marks as Charlotte.</p>
+    <ul class="plates rv d1">
+      <li><img src="img/cred/bbb.png" alt="BBB Accredited Business" loading="lazy" width="120" height="120"></li>
+      <li><img src="img/cred/nahb.png" alt="Member, National Association of Home Builders" loading="lazy" width="120" height="120"></li>
+      <li><img src="img/cred/qbw.png" alt="Quality Builders Warranty" loading="lazy" width="200" height="60"></li>
+      <li><img src="img/cred/ica-x12.png" alt="ICA X12" loading="lazy" width="120" height="120"></li>
+      <li><img src="img/cred/lumion.png" alt="Lumion 3D rendering" loading="lazy" width="120" height="120"></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═════ FAQ ═════ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-side rv">
+      <span class="eyebrow"><i>VIII</i> Questions</span>
+      <h2 class="h2">Before you <em>call us.</em></h2>
+      <div class="arch"><img src="img/w/sullivans-island-island-cottage-700.webp" width="700" height="938" loading="lazy" alt="Illustrative island cottage with a screened porch on Sullivan's Island"></div>
+      <p class="cap">Illustrative · Sullivan's Island</p>
+    </div>
+    <div class="faq-list rv d1">
+      <details open><summary>Do I need to own a lot first?</summary><div class="ans">No. We can evaluate lots you're considering and tell you what each one allows, including its flood zone and review rules, before you buy.</div></details>
+      <details><summary>How is the price set?</summary><div class="ans">After design, we issue a fixed bid with allowances listed line by line, so you know the number before you sign.</div></details>
+      <details><summary>How do I know which flood zone my lot is in?</summary><div class="ans">We check your lot against the current flood maps during lot evaluation and explain what that zone means for the foundation and design.</div></details>
+      <details><summary>Can you build from my architect's plans?</summary><div class="ans">Yes. We review third-party plans for constructability and coastal requirements before we bid. Most clients use our in-house designers because design and pricing stay in one team.</div></details>
+      <details><summary>Renovate or rebuild?</summary><div class="ans">It depends on the structure, the flood elevation and what you want the home to become. We assess the house and give you an honest answer on both paths.</div></details>
+      <details><summary>How is RAM Charleston related to RAM in Charlotte?</summary><div class="ans">RAM Construction Charleston is a division of RAM Construction, the Charlotte design-build firm founded in 2004, with its own South Carolina license. Same team approach, same standards.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═════ the door ═════ -->
+<section class="door on-dark" id="door">
+  <div class="door-bg"><img src="img/w/daniel-island-waterfront-home-1200.webp" width="1200" height="1607" loading="lazy" alt=""></div>
+  <div class="wrap door-grid">
+    <div class="rv">
+      <span class="eyebrow"><i>IX</i> Begin a home</span>
+      <h2 class="h2">Tell us about <em>the lot.</em></h2>
+      <p class="lede">Where it is, what you want it to become, and when. We'll come back within one business day to set a time to walk it with you.</p>
+      <div class="phone"><small>Charleston line</small><a href="tel:+18430000000">(843) 000-0000</a><span>843 number issued at launch · Mon to Fri, 8am to 6pm</span></div>
+    </div>
+    <form class="form rv d1" action="#" onsubmit="return false">
+      <div class="form-crown"><svg viewBox="0 0 120 60" aria-hidden="true"><g><line x1="60" y1="58" x2="60" y2="8"/><line x1="60" y1="58" x2="95.4" y2="22.6"/><line x1="60" y1="58" x2="110" y2="58"/><line x1="60" y1="58" x2="24.6" y2="22.6"/><line x1="60" y1="58" x2="10" y2="58"/></g><path d="M10 58a50 50 0 0 1 100 0" fill="none" stroke="#0B0B0C" stroke-width="1.2"/><circle cx="60" cy="58" r="3" fill="#AA0926"/></svg><h3>Begin your home</h3></div>
+      <div class="fgrid">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name"></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+        <div class="field"><label for="f-area">Where</label><select id="f-area" name="area"><option>Mount Pleasant</option><option>Isle of Palms</option><option>Sullivan's Island</option><option>Daniel Island</option><option>Elsewhere in Charleston</option></select></div>
+        <div class="field"><label for="f-type">Project</label><select id="f-type" name="type"><option>New custom home</option><option>Coastal / elevated home</option><option>Renovation or addition</option><option>Not sure yet</option></select></div>
+        <div class="field full"><label for="f-msg">The lot and the plan</label><textarea id="f-msg" name="message"></textarea></div>
+      </div>
+      <button class="btn btn-red" type="submit">Send to RAM Charleston <span class="disc" aria-hidden="true">&rarr;</span></button>
+      <p class="form-note">We never share your details.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ═════ colophon ═════ -->
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-sign">
+      <a class="lockup" href="#top" aria-label="RAM Construction Charleston, back to top">
+        <img src="img/brand/ram-logo--bw.svg" alt="RAM Construction" width="70" height="86" loading="lazy">
+        <span class="wm"><b>RAM Construction</b><small>Charleston · South Carolina</small></span>
+      </a>
+      <div class="ftr-line">
+        <svg class="fan" viewBox="0 0 120 60" aria-hidden="true"><g><line x1="60" y1="58" x2="60" y2="8"/><line x1="60" y1="58" x2="95.4" y2="22.6"/><line x1="60" y1="58" x2="110" y2="58"/><line x1="60" y1="58" x2="24.6" y2="22.6"/><line x1="60" y1="58" x2="10" y2="58"/></g><path d="M10 58a50 50 0 0 1 100 0" fill="none" stroke="rgba(243,243,243,.5)" stroke-width="1.2"/><circle cx="60" cy="58" r="3" fill="#E23C41"/></svg>
+        <p>The Charleston chapter of a <em>twenty-year practice.</em></p>
+      </div>
+    </div>
+    <div class="ftr-cols">
+      <div class="ftr-col">
+        <h4>Charleston line</h4>
+        <a class="ftr-tel" href="tel:+18430000000">(843) 000-0000</a>
+        <p><a href="mailto:hello@ramconstructionsc.com">hello@ramconstructionsc.com</a><br>Mon to Fri, 8am to 6pm</p>
+        <p>RAM Construction Charleston, a division of <a href="https://www.ramconstructioninc.com" style="text-decoration:underline">RAM Construction, Charlotte NC</a>. Custom homes, coastal homes and renovations across Charleston and the Lowcountry.</p>
+      </div>
+      <div class="ftr-col"><h4>What we build</h4><ul><li><a href="#services">Custom Homes</a></li><li><a href="#services">Coastal &amp; Elevated Homes</a></li><li><a href="#services">Renovations &amp; Additions</a></li><li><a href="#services">Design-Build</a></li></ul></div>
+      <div class="ftr-col"><h4>Where we build</h4><ul><li><a href="#areas">Mount Pleasant</a></li><li><a href="#areas">Isle of Palms</a></li><li><a href="#areas">Sullivan's Island</a></li><li><a href="#areas">Daniel Island</a></li></ul></div>
+      <div class="ftr-col"><h4>The practice</h4><ul><li><a href="#about">About &amp; SC license</a></li><li><a href="#process">Process</a></li><li><a href="#work">The work</a></li><li><a href="#faq">Questions</a></li><li><a href="#door">Begin a home</a></li></ul></div>
+    </div>
+    <div class="ftr-base"><span>© 2026 RAM Construction Charleston · SC licensed residential builder · Serving Charleston &amp; the Lowcountry</span><span>Lowcountry scenes are illustrative renderings. Project photographs are RAM homes in Charlotte, NC.</span></div>
+  </div>
+</footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="glyphdef" fill="currentColor" fill-rule="evenodd" d=""/></defs></svg>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"GeneralContractor","name":"RAM Construction Charleston","description":"Custom home builder and design-build firm serving Charleston and the Lowcountry, SC.","parentOrganization":{"@type":"Organization","name":"RAM Construction","url":"https://www.ramconstructioninc.com","foundingDate":"2004"},"areaServed":[{"@type":"City","name":"Mount Pleasant, SC"},{"@type":"City","name":"Isle of Palms, SC"},{"@type":"City","name":"Sullivan's Island, SC"},{"@type":"Place","name":"Daniel Island, SC"},{"@type":"City","name":"Charleston, SC"}],"knowsAbout":["Custom homes","Coastal and elevated homes","Renovations and additions","Design-build"]}
+</script>
+<script>
+/* horn keyline: the RAM glyph traced from the original logo, drawn as a hairline */
+fetch('img/brand/paths.json').then(r=>r.json()).then(p=>{
+  document.getElementById('hornpath').setAttribute('d',p.glyph);
+  document.getElementById('glyphdef').setAttribute('d',p.glyph+' '+p.left+' '+p.right);
+}).catch(()=>{});
+/* FAQPage JSON-LD built from the visible accordion (one source) */
+(function(){const q=[...document.querySelectorAll('.faq details')].map(d=>({"@type":"Question","name":d.querySelector('summary').textContent.trim(),"acceptedAnswer":{"@type":"Answer","text":d.querySelector('.ans').textContent.trim()}}));
+const s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":q});document.head.appendChild(s)})();
+/* mobile menu */
+const mn=document.getElementById('mnav'),mo=document.getElementById('mopen');
+const setM=o=>{mn.classList.toggle('is-open',o);mo.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
+mo.addEventListener('click',()=>setM(true));document.getElementById('mclose').addEventListener('click',()=>setM(false));
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setM(false)));
+/* header state: alabaster masthead once the hero has scrolled */
+const hdr=document.getElementById('hdr');const onS=()=>hdr.classList.toggle('is-solid',scrollY>80);addEventListener('scroll',onS,{passive:true});onS();
+/* the colonnade opens: hover or focus opens a bay; otherwise the bays take turns while in view */
+const acc=document.getElementById('acc');const wide=()=>matchMedia('(min-width:861px)').matches;const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(acc){const bays=[...acc.querySelectorAll('.area')];let cur=0,hold=false,timer=0;
+  const openB=i=>{cur=i;bays.forEach((b,k)=>b.classList.toggle('is-open',k===i))};
+  const start=()=>{clearInterval(timer);if(!calm)timer=setInterval(()=>{if(!hold&&wide())openB((cur+1)%bays.length)},3800)};
+  bays.forEach((b,i)=>{b.addEventListener('mouseenter',()=>{hold=true;openB(i)});b.addEventListener('focusin',()=>{hold=true;openB(i)});
+    b.addEventListener('click',e=>{if(wide()&&!b.classList.contains('is-open')){e.preventDefault();hold=true;openB(i)}})});
+  acc.addEventListener('mouseleave',()=>{hold=false;start()});acc.addEventListener('focusout',e=>{if(!acc.contains(e.relatedTarget)){hold=false}});
+  new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():clearInterval(timer))).observe(acc)}
+/* the work slider: arrows, drag, keyboard, a progress rule */
+const tr=document.getElementById('track');if(tr){const bar=document.querySelector('.slider-bar i');
+  const upd=()=>{const max=tr.scrollWidth-tr.clientWidth,f=tr.clientWidth/tr.scrollWidth;bar.style.width=(f*100)+'%';bar.style.left=(max>0?tr.scrollLeft/max*(100-f*100):0)+'%'};
+  tr.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  document.querySelector('.slider-nav .next').addEventListener('click',()=>tr.scrollBy({left:tr.clientWidth*.7,behavior:'smooth'}));
+  document.querySelector('.slider-nav .prev').addEventListener('click',()=>tr.scrollBy({left:-tr.clientWidth*.7,behavior:'smooth'}));
+  tr.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){tr.scrollBy({left:360,behavior:'smooth'})}if(e.key==='ArrowLeft'){tr.scrollBy({left:-360,behavior:'smooth'})}});
+  let down=false,sx=0,sl=0;tr.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down=true;sx=e.clientX;sl=tr.scrollLeft;tr.classList.add('is-drag')});
+  addEventListener('pointermove',e=>{if(down)tr.scrollLeft=sl-(e.clientX-sx)});addEventListener('pointerup',()=>{down=false;tr.classList.remove('is-drag')})}
+/* hero: the towns take turns */
+const cyc=document.getElementById('cyc');if(cyc&&!calm){const towns=['Mount Pleasant','Isle of Palms',"Sullivan's Island",'Daniel Island'];let n=0;const b=cyc.firstElementChild;
+  setInterval(()=>{b.classList.add('out');setTimeout(()=>{n=(n+1)%towns.length;b.textContent=towns[n];b.classList.remove('out');b.classList.add('in');requestAnimationFrame(()=>requestAnimationFrame(()=>b.classList.remove('in')))},460)},2800)}
+/* the window: when a rendered walk-through clip exists (data-src), it replaces the drawn sequence */
+const pv=document.querySelector('.pane-video');if(pv&&pv.dataset.src&&!calm){pv.src=pv.dataset.src;pv.addEventListener('canplay',()=>{pv.closest('.pane').classList.add('has-video');pv.play().catch(()=>{})},{once:true});pv.load()}
+/* reveals */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
