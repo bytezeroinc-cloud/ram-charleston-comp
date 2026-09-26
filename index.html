@@ -144,35 +144,39 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 .ledger-item h3{font:600 25px/1.1 var(--serif);color:var(--alabaster)}
 .ledger-item p{font:300 15px/1.6 var(--sans);color:rgba(243,243,243,.72)}
 
-/* ── the chapter: type beside a pair of fanlights ────────────────────── */
-.chapter{padding:130px 0 120px}
-.chapter-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:100px;align-items:center}
+/* ── the chapter: the piazza hangs from the alabaster into the open-room band ── */
+.chapter{background:var(--alabaster);position:relative}
+.chapter-top{padding:130px 0 0}
+.chapter-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:96px;align-items:start}
+.chapter-art{position:relative;z-index:3;margin:0 0 -270px}
+.chapter-art .arch{aspect-ratio:3/3.9}
+.chapter-art .cap{color:rgba(243,243,243,.6)}
+.chapter-copy{padding-top:16px;padding-bottom:70px}
 .chapter .h2{margin:22px 0 28px}
-.recog{margin-top:36px;padding-top:24px;border-top:1px solid var(--rule);font:italic 500 22px/1.45 var(--serif);color:var(--black);max-width:30ch}
-.recog span{display:block;font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:12px;font-style:normal}
-.pair{display:grid;grid-template-columns:1.12fr .88fr;gap:24px;align-items:end}
-.pair .tall .arch{aspect-ratio:3/4.35}
-.pair .short .arch{aspect-ratio:3/3.5}
-.pair figcaption{border-top:1px solid var(--rule);padding-top:12px;margin-top:0}
 
-/* ── the numbers · figures on an open room (photo band) ───────────────── */
-.numbers{position:relative;min-height:640px;display:flex;align-items:center;color:var(--alabaster);background:var(--black-night);overflow:hidden}
-.numbers-img{position:absolute;inset:0}
-.numbers-img img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
-.numbers::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,6,.8) 0%,rgba(5,5,6,.6) 50%,rgba(5,5,6,.42) 100%),linear-gradient(0deg,rgba(5,5,6,.5),rgba(5,5,6,0) 40%)}
-.numbers-in{position:relative;z-index:2;width:var(--wrap);margin:auto;display:grid;grid-template-columns:1fr auto;gap:70px;align-items:stretch;padding:120px 0 120px}
-.numbers-body .eyebrow{margin-bottom:44px}
+/* ── the band: recognition, four figures and a vertical title on an open room ─── */
+.chapter-band{position:relative;color:var(--alabaster);background:var(--black-night);overflow:hidden}
+.band-img{position:absolute;inset:0}
+.band-img img{width:100%;height:100%;object-fit:cover;object-position:60% 62%}
+.chapter-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,6,.82) 0%,rgba(5,5,6,.6) 48%,rgba(5,5,6,.42) 100%),linear-gradient(0deg,rgba(5,5,6,.55),rgba(5,5,6,0) 45%)}
+.band-in{position:relative;z-index:2;width:var(--wrap);margin:auto;display:grid;grid-template-columns:.9fr 1.1fr auto;grid-template-rows:auto auto;gap:0 70px;padding:84px 0 120px}
+.band-pull{grid-column:2;grid-row:1;margin-left:26px;padding-bottom:112px;max-width:30ch;font:500 clamp(24px,2.1vw,30px)/1.4 var(--serif);color:var(--alabaster)}
+.band-pull em{color:var(--amber)}
+.band-pull span{display:block;font:500 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+.band-figs{grid-column:1/3;grid-row:2;min-width:0}
+.band-figs .eyebrow{margin-bottom:44px}
 .figs{display:grid;grid-template-columns:repeat(4,1fr);gap:44px 36px}
 .fig{padding-bottom:22px;border-bottom:1px solid rgba(243,243,243,.32)}
 .fig b{display:block;font:500 clamp(58px,6.2vw,94px)/1 var(--serif);letter-spacing:-.02em;color:var(--alabaster);white-space:nowrap}
 .fig b i{font:italic 400 .36em/1 var(--serif);color:var(--amber);margin-left:.22em;letter-spacing:0}
 .fig span{display:block;margin-top:18px;font:500 11.5px/1.5 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:rgba(243,243,243,.9)}
 .fig small{display:block;margin-top:8px;font:300 13px/1.55 var(--sans);color:rgba(243,243,243,.74)}
-.numbers-title{display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);padding-left:6px;border-right:1px solid rgba(243,243,243,.25)}
+.numbers-title{grid-column:3;grid-row:1/3;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);padding-left:6px;border-right:1px solid rgba(243,243,243,.25)}
 .numbers-title p{font:500 clamp(34px,3.4vw,50px)/1.08 var(--serif);letter-spacing:.01em;color:var(--alabaster);max-height:100%;text-align:center}
 .numbers-title p em{color:var(--amber)}
 .numbers-src{position:absolute;left:calc((100vw - var(--wrap))/2);bottom:24px;z-index:2;font:400 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,243,243,.55)}
 
+/* ── services · the arcade on the tint ───────────────────────────────── */
 .services{background:var(--tint);padding:120px 0}
 .arcade{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .bay{display:flex;flex-direction:column}
@@ -416,6 +420,9 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .arcade{grid-template-columns:repeat(2,1fr)}
   .acc{height:540px}
   .figs{grid-template-columns:repeat(2,1fr)}
+  .chapter-grid{gap:56px}
+  .chapter-art{margin-bottom:-200px}
+  .band-in{gap:0 40px}
   .window-grid{grid-template-columns:1fr;gap:44px}
   .steps{grid-template-columns:repeat(2,1fr)}
   .stepc:nth-child(3){border-left:0;padding-left:0}
@@ -443,23 +450,20 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .ledger-row{grid-template-columns:1fr}
   .ledger-item{border-left:0;padding:22px 0;border-top:1px solid var(--rule-lt)}
   .ledger-item:first-child{border-top:0}
-  .chapter{padding:90px 0}
-  .chapter-grid,.sec-head,.coast-grid,.faq-grid,.door-grid,.creds-row,.numbers-in{grid-template-columns:1fr;gap:44px}
-  .numbers{min-height:0}
-  .numbers-in{padding:90px 0 80px}
-  .numbers{display:block}
-  .numbers-title{writing-mode:horizontal-tb;transform:none;justify-content:flex-start;padding:0;border-right:0;border-top:1px solid rgba(243,243,243,.25);padding-top:22px}
-  .numbers-title p{max-height:none;text-align:left}
-  .numbers-body .eyebrow{margin-bottom:30px}
+  .chapter-top{padding:90px 0 0}
+  .chapter-grid,.sec-head,.coast-grid,.faq-grid,.door-grid,.creds-row{grid-template-columns:1fr;gap:36px}
+  .chapter-art{order:2;margin:0 0 -90px;width:82%}
+  .chapter-copy{order:1;padding:0}
+  .band-in{display:flex;flex-direction:column;gap:0;padding:130px 0 0}
+  .band-pull{margin:0;padding:0 0 40px;max-width:none;font-size:22px}
+  .band-figs .eyebrow{margin-bottom:30px}
   .figs{gap:30px 22px}
   .fig b{font-size:52px}
-  .numbers-src{position:static;display:block;width:var(--wrap);margin:0 auto;padding:0 0 26px}
-  .recog{font-size:19px}
+  .numbers-title{writing-mode:horizontal-tb;transform:none;justify-content:flex-start;padding:26px 0 0;border-right:0;border-top:1px solid rgba(243,243,243,.25);margin-top:34px}
+  .numbers-title p{max-height:none;text-align:left}
+  .numbers-src{position:static;display:block;width:var(--wrap);margin:0 auto;padding:36px 0 26px}
   .sec-head{margin-bottom:44px}
   .sec-head .lede{justify-self:start;padding-bottom:0}
-  .facts div{grid-template-columns:1fr;gap:4px}
-  .pair{gap:14px}
-  .pair figcaption{font-size:9.5px;letter-spacing:.12em}
   .services,.process,.work,.coast,.faq,.door{padding:90px 0}
   .areas{padding-top:90px}
   .arcade{grid-template-columns:1fr;gap:44px}
@@ -588,40 +592,38 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   </div>
 </div>
 
-<!-- ═════ the chapter ═════ -->
+<!-- ═════ the chapter · twenty years, the piazza, the open room and the numbers, one composition ═════ -->
 <section class="chapter" id="about">
-  <div class="wrap chapter-grid">
-    <div class="rv">
-      <span class="eyebrow"><i>I</i> The Charleston chapter</span>
-      <h2 class="h2">Twenty years of RAM, <em>now on the coast.</em></h2>
-      <p class="lede">RAM Construction has designed and built custom homes in Charlotte since 2004. RAM Construction Charleston brings the same in-house architects, fixed bids and 3D walk-throughs to the Lowcountry, under its own South Carolina license.</p>
-      <p class="recog"><span>Recognition</span>Awards for quality, innovation and design, and multiple years on Charlotte's Dilworth Home Tour.</p>
-    </div>
-    <div class="pair rv d1">
-      <figure class="tall"><div class="arch"><img src="img/w/charleston-piazza-evening-1200.webp" width="1200" height="1607" loading="lazy" alt="A deep Charleston piazza at dusk with white columns, rocking chairs and copper gas lanterns, live oaks and marsh beyond"></div><figcaption class="cap">Illustrative · a Charleston piazza at dusk</figcaption></figure>
-      <figure class="short"><div class="arch"><img src="img/w/open-living-room-stair-marsh-light-700.webp" width="700" height="933" loading="lazy" alt="Illustrative double-height open living room with tall windows to a screened porch, a white staircase and heart pine floors"></div><figcaption class="cap">Illustrative · an open living room, Mount Pleasant</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ═════ the numbers · figures on an open room ═════ -->
-<section class="numbers on-dark" id="numbers" aria-label="RAM in numbers">
-  <div class="numbers-img"><img src="img/w/open-plan-great-room-porch-doors-2400.webp" width="2400" height="1350" loading="lazy" alt="Illustrative open-plan great room and kitchen of a Lowcountry home with glass doors folded open to a covered porch and the marsh"></div>
-  <div class="numbers-in">
-    <div class="numbers-body">
-      <span class="eyebrow rv">Why build with RAM</span>
-      <div class="figs">
-      <div class="fig rv"><b>2004</b><span>Design-build since</span><small>RAM began in Charlotte as one firm: architects, builders and designers.</small></div>
-      <div class="fig rv d1"><b>6,000<i>sq ft</i></b><span>The range of a RAM home</span><small>From 6,000 sq ft modern homes in SouthPark to Craftsman bungalows in Dilworth.</small></div>
-      <div class="fig rv d2"><b>1</b><span>Contract, drawing, budget</span><small>One team draws, prices and builds. Nothing is lost between them.</small></div>
-      <div class="fig rv d3"><b>4</b><span>Towns on the coast</span><small>Mount Pleasant, Isle of Palms, Sullivan's Island and Daniel Island.</small></div>
+  <div class="chapter-top">
+    <div class="wrap chapter-grid">
+      <figure class="chapter-art rv"><div class="arch"><img src="img/w/charleston-piazza-evening-1200.webp" width="1200" height="1607" loading="lazy" alt="A deep Charleston piazza at dusk with white columns, rocking chairs and copper gas lanterns, live oaks and marsh beyond"></div><figcaption class="cap">Illustrative · a Charleston piazza at dusk</figcaption></figure>
+      <div class="chapter-copy rv d1">
+        <span class="eyebrow"><i>I</i> The Charleston chapter</span>
+        <h2 class="h2">Twenty years of RAM, <em>now on the coast.</em></h2>
+        <p class="lede">RAM Construction has designed and built custom homes in Charlotte since 2004. RAM Construction Charleston brings the same in-house architects, fixed bids and 3D walk-throughs to the Lowcountry, under its own South Carolina license.</p>
       </div>
     </div>
-    <div class="numbers-title rv d1"><p>The chapter, <em>in numbers.</em></p></div>
   </div>
-  <p class="numbers-src">Figures from RAM Construction, Charlotte · Room is an illustrative scene</p>
+  <div class="chapter-band on-dark" aria-label="Why build with RAM">
+    <div class="band-img"><img src="img/w/open-plan-great-room-porch-doors-2400.webp" width="2400" height="1340" loading="lazy" alt="Illustrative open-plan great room and kitchen of a Lowcountry home with glass doors folded open to a covered porch and the marsh"></div>
+    <div class="band-in">
+      <p class="band-pull rv"><span>Recognition</span>Awards for quality, innovation and design, and <em>multiple years on Charlotte's Dilworth Home Tour.</em></p>
+      <div class="band-figs">
+        <span class="eyebrow rv">Why build with RAM</span>
+        <div class="figs">
+          <div class="fig rv"><b>2004</b><span>Design-build since</span><small>RAM began in Charlotte as one firm: architects, builders and designers.</small></div>
+          <div class="fig rv d1"><b>6,000<i>sq ft</i></b><span>The range of a RAM home</span><small>From 6,000 sq ft modern homes in SouthPark to Craftsman bungalows in Dilworth.</small></div>
+          <div class="fig rv d2"><b>1</b><span>Contract, drawing, budget</span><small>One team draws, prices and builds. Nothing is lost between them.</small></div>
+          <div class="fig rv d3"><b>4</b><span>Towns on the coast</span><small>Mount Pleasant, Isle of Palms, Sullivan's Island and Daniel Island.</small></div>
+        </div>
+      </div>
+      <div class="numbers-title rv d1"><p>Twenty years, <em>in numbers.</em></p></div>
+    </div>
+    <p class="numbers-src">Figures from RAM Construction, Charlotte · Room is an illustrative scene</p>
+  </div>
 </section>
 
+<!-- ═════ services · the arcade ═════ -->
 <section class="services" id="services">
   <div class="wrap">
     <div class="sec-head">
@@ -776,8 +778,8 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
     <div class="faq-side rv">
       <span class="eyebrow"><i>VIII</i> Questions</span>
       <h2 class="h2">Before you <em>call us.</em></h2>
-      <div class="arch"><img src="img/w/sullivans-island-island-cottage-700.webp" width="700" height="938" loading="lazy" alt="Illustrative island cottage with a screened porch on Sullivan's Island"></div>
-      <p class="cap">Illustrative · Sullivan's Island</p>
+      <div class="arch"><img src="img/w/open-living-room-stair-marsh-light-700.webp" width="700" height="938" loading="lazy" alt="Illustrative double-height open living room with tall windows to a screened porch, a white staircase and heart pine floors"></div>
+      <p class="cap">Illustrative · an open living room, Mount Pleasant</p>
     </div>
     <div class="faq-list rv d1">
       <details open><summary>Do I need to own a lot first?</summary><div class="ans">No. We can evaluate lots you're considering and tell you what each one allows, including its flood zone and review rules, before you buy.</div></details>
