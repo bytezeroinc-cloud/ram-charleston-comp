@@ -177,19 +177,19 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 .numbers-src{position:absolute;left:calc((100vw - var(--wrap))/2);bottom:24px;z-index:2;font:400 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,243,243,.55)}
 
 /* ── services · the arcade on the tint ───────────────────────────────── */
-.services{background:var(--tint);padding:120px 0}
-.svc-acc{display:flex;height:700px;background:var(--black);overflow:hidden}
+.services{background:var(--black);padding:0;position:relative}
+.svc-acc{display:flex;height:clamp(640px,92svh,920px);background:var(--black);overflow:hidden}
 .svc-pane{position:relative;flex:1;min-width:0;overflow:hidden;border-left:1px solid rgba(243,243,243,.12);transition:flex 1.1s var(--ease);color:var(--alabaster);display:block}
 .svc-pane:first-child{border-left:0}
 .svc-pane.is-open{flex:2.6}
 .svc-pane>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(.85);transform:scale(1.06);transition:filter .9s var(--ease),transform 1.4s var(--ease)}
 .svc-pane.is-open>img{filter:brightness(.8) saturate(1);transform:scale(1)}
 .svc-pane::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,6,.88) 0%,rgba(5,5,6,.2) 55%,rgba(5,5,6,.3) 100%);pointer-events:none}
-.svc-tag{position:absolute;right:24px;top:28px;bottom:28px;z-index:2;display:flex;align-items:flex-end;gap:12px;pointer-events:none}
+.svc-tag{position:absolute;right:28px;top:32px;bottom:36px;z-index:2;display:flex;align-items:flex-end;gap:12px;pointer-events:none}
 .svc-tag::before{content:"";width:3px;height:56px;background:var(--amber);align-self:flex-end;transition:height .5s var(--ease)}
 .svc-pane.is-open .svc-tag::before{height:84px}
 .svc-tag b{writing-mode:vertical-rl;transform:rotate(180deg);font:500 26px/1 var(--serif);letter-spacing:.04em;white-space:nowrap;color:var(--alabaster)}
-.svc-body{position:absolute;left:30px;right:96px;bottom:30px;z-index:2;max-width:340px;opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease) .3s,transform .55s var(--ease) .3s}
+.svc-body{position:absolute;left:44px;right:100px;bottom:40px;z-index:2;max-width:360px;opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease) .3s,transform .55s var(--ease) .3s}
 .svc-pane.is-open .svc-body{opacity:1;transform:none}
 .svc-body .n{font:italic 500 15px/1 var(--serif);color:var(--amber)}
 .svc-body h3{font:600 32px/1.1 var(--serif);margin-top:10px}
@@ -200,14 +200,14 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 .svc-face{position:relative;flex:0 0 40%;margin:0;overflow:hidden;color:var(--alabaster);border-left:1px solid rgba(243,243,243,.12)}
 .svc-face>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%}
 .svc-face::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,6,.95) 0%,rgba(5,5,6,.8) 30%,rgba(5,5,6,.35) 46%,rgba(5,5,6,0) 60%)}
-.svc-face figcaption{position:absolute;left:34px;right:34px;bottom:28px;z-index:2}
+.svc-face figcaption{position:absolute;left:44px;right:44px;bottom:40px;z-index:2}
 .svc-face .h2{font-size:clamp(28px,2.2vw,32px);margin:14px 0 12px;color:var(--alabaster)}
 .svc-face .h2 em{color:var(--amber)}
 .svc-face .eyebrow{color:var(--amber)}
 .svc-face p{font:500 15.5px/1.5 var(--serif);color:rgba(243,243,243,.88);max-width:40ch}
 .svc-face .more{color:var(--alabaster);margin-top:16px}
 .svc-face .cap{display:block;margin-top:14px;color:rgba(243,243,243,.5)}
-.svc-src{margin-top:26px;font:400 11px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.svc-src{margin:0;padding:14px 24px 16px;font:400 10.5px/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(243,243,243,.5);border-top:1px solid rgba(243,243,243,.08)}
 
 /* ── the window · a walk-through drawn in four beats (black) ─────────── */
 .window{background:var(--black);padding:120px 0;color:var(--alabaster);position:relative;overflow:hidden}
@@ -434,9 +434,9 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .hdr-m{display:flex;gap:10px;justify-content:flex-end;grid-column:3}
   .hdr-m a,.hdr-m button{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(243,243,243,.4);background:rgba(5,5,6,.3);color:var(--alabaster);cursor:pointer}
   .hdr.is-solid .hdr-m a,.hdr.is-solid .hdr-m button{border-color:var(--rule);background:transparent;color:var(--black)}
-  .svc-acc{height:640px}
+  .svc-acc{height:clamp(600px,86svh,820px)}
   .svc-face{flex:0 0 42%}
-  .svc-body{max-width:300px;right:80px}
+  .svc-body{max-width:300px;right:80px;left:30px}
   .acc{height:540px}
   .figs{grid-template-columns:repeat(2,1fr)}
   .chapter-grid{gap:56px}
@@ -483,19 +483,20 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .numbers-src{position:static;display:block;width:var(--wrap);margin:0 auto;padding:36px 0 26px}
   .sec-head{margin-bottom:44px}
   .sec-head .lede{justify-self:start;padding-bottom:0}
-  .services,.process,.work,.coast,.faq,.door{padding:90px 0}
-  .svc-src{margin-top:18px}
+  .process,.work,.coast,.faq,.door{padding:90px 0}
+  .services{padding:0}
+  .svc-src{padding:12px 16px 14px}
   .areas{padding-top:90px}
   .svc-acc{flex-direction:column;height:auto}
   .svc-face{flex:none;order:-1;aspect-ratio:3/3.7;border-left:0}
-  .svc-face figcaption{left:20px;right:20px;bottom:22px}
+  .svc-face figcaption{left:16px;right:16px;bottom:22px}
   .svc-face .h2{font-size:28px}
   .svc-face p{font-size:15.5px}
   .svc-pane{flex:none;min-height:0;border-left:0;border-top:1px solid rgba(243,243,243,.12)}
   .svc-pane>img{filter:brightness(.55) saturate(.95);transform:none}
   .svc-pane.is-open>img{filter:brightness(.62)}
   .svc-tag{display:none}
-  .svc-body{position:relative;left:0;right:0;bottom:0;max-width:none;opacity:1;transform:none;padding:150px 20px 24px}
+  .svc-body{position:relative;left:0;right:0;bottom:0;max-width:none;opacity:1;transform:none;padding:150px 16px 24px}
   .svc-body h3{font-size:26px}
   .acc{display:grid;grid-template-columns:1fr 1fr;gap:18px;height:auto}
   .area .arch{flex:none;aspect-ratio:3/4.15;margin-top:0!important}
@@ -654,7 +655,6 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 
 <!-- ═════ services · the arcade ═════ -->
 <section class="services" id="services">
-  <div class="wrap">
     <div class="svc-acc" id="svc" aria-label="What we build">
       <a class="svc-pane is-open" href="#door">
         <img src="img/w/ram-two-storey-porches-800.webp" width="800" height="569" loading="lazy" alt="A RAM custom home with two storeys of deep covered porches and black steel railings">
@@ -688,7 +688,6 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
       </figure>
     </div>
     <p class="svc-src">Panels i, iii and iv: RAM homes and renderings, Charlotte, NC · Panel ii and the portrait: illustrative</p>
-  </div>
 </section>
 
 <!-- ═════ the window · a walk-through in four beats ═════ -->
