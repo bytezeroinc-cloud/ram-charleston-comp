@@ -215,16 +215,16 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 .js .beats li:nth-child(3){animation:beat3 16s linear infinite}
 .js .beats li:nth-child(4){animation:beat4 16s linear infinite}
 @keyframes bMarsh{0%{opacity:1;transform:scale(1.18)}22%{opacity:1;transform:scale(1)}28%{opacity:0;transform:scale(.98)}100%{opacity:0;transform:scale(.98)}}
-@keyframes bHouse{0%,21%{opacity:0;transform:scale(1)}28%{opacity:1}58%{opacity:1;transform:scale(1.48)}63%,100%{opacity:0;transform:scale(1.48)}}
-@keyframes bDoors{0%,51%{opacity:0}55%,72%{opacity:1}74%,100%{opacity:0}}
-@keyframes bDoorL{0%,58%{transform:translateX(0)}70%,100%{transform:translateX(-102%)}}
-@keyframes bDoorR{0%,58%{transform:translateX(0)}70%,100%{transform:translateX(102%)}}
-@keyframes bRoom{0%,55%{opacity:0;transform:scale(1)}59%{opacity:1;transform:scale(1)}96%{opacity:1;transform:scale(1.08)}100%{opacity:0;transform:scale(1.08)}}
+@keyframes bHouse{0%,21%{opacity:0;transform:scale(1)}28%{opacity:1}57%{opacity:1;transform:scale(1.48)}62%,100%{opacity:0;transform:scale(1.48)}}
+@keyframes bDoors{0%,50%{opacity:0}54%,73%{opacity:1}75%,100%{opacity:0}}
+@keyframes bDoorL{0%,61%{transform:translateX(0)}72%,100%{transform:translateX(-102%)}}
+@keyframes bDoorR{0%,61%{transform:translateX(0)}72%,100%{transform:translateX(102%)}}
+@keyframes bRoom{0%,56%{opacity:0;transform:scale(1)}60%{opacity:1;transform:scale(1)}96%{opacity:1;transform:scale(1.08)}100%{opacity:0;transform:scale(1.08)}}
 @keyframes bDip{0%{opacity:1}4%{opacity:0}95%{opacity:0}100%{opacity:1}}
 @keyframes beat1{0%,26%{color:var(--amber)}27%,100%{color:rgba(243,243,243,.38)}}
 @keyframes beat2{0%,26%{color:rgba(243,243,243,.38)}27%,54%{color:var(--amber)}55%,100%{color:rgba(243,243,243,.38)}}
-@keyframes beat3{0%,54%{color:rgba(243,243,243,.38)}55%,70%{color:var(--amber)}71%,100%{color:rgba(243,243,243,.38)}}
-@keyframes beat4{0%,70%{color:rgba(243,243,243,.38)}71%,96%{color:var(--amber)}97%,100%{color:rgba(243,243,243,.38)}}
+@keyframes beat3{0%,53%{color:rgba(243,243,243,.38)}54%,71%{color:var(--amber)}72%,100%{color:rgba(243,243,243,.38)}}
+@keyframes beat4{0%,71%{color:rgba(243,243,243,.38)}72%,96%{color:var(--amber)}97%,100%{color:rgba(243,243,243,.38)}}
 
 /* ── where we build · the staggered colonnade (black) ────────────────── */
 .areas{background:var(--black);padding:120px 0 0;color:var(--alabaster);position:relative;overflow:hidden}
@@ -238,12 +238,13 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 .area .arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter .9s var(--ease)}
 .area:not(.is-open) .arch img{filter:brightness(.7) saturate(.85)}
 .area:hover .arch img{transform:scale(1.04)}
-.area-meta{padding:22px 0 0;border-top:1px solid var(--rule-lt);margin-top:20px;min-height:158px}
+.area-meta{padding:22px 0 0;border-top:1px solid var(--rule-lt);margin-top:20px;min-height:150px}
 .area-meta small{font:500 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--amber)}
 .area h3{font:500 clamp(24px,2.4vw,36px)/1.05 var(--serif);margin:10px 0 0}
 .area p{font-size:14.5px;line-height:1.6;color:rgba(243,243,243,.7);margin-top:10px}
 .area .more{margin-top:14px}
 .area p,.area .more{opacity:0;transform:translateY(8px);transition:opacity .6s var(--ease) .3s,transform .6s var(--ease) .3s}
+.area:not(.is-open) p,.area:not(.is-open) .more{height:0;margin:0;overflow:hidden}
 .area.is-open p,.area.is-open .more{opacity:1;transform:none}
 .area-note{margin-top:48px;font:400 11px/1.6 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:rgba(243,243,243,.5)}
 .marquee{margin-top:84px;border-top:1px solid var(--rule-lt);padding:26px 0;overflow:hidden;white-space:nowrap}
