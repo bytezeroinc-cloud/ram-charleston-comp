@@ -178,6 +178,13 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 
 /* ── services · the arcade on the tint ───────────────────────────────── */
 .services{background:var(--tint);padding:120px 0}
+.story{display:grid;grid-template-columns:.86fr 1.14fr;gap:96px;align-items:center;margin-bottom:96px}
+.story-art .arch{aspect-ratio:3/3.75}
+.story-copy .h2{margin:22px 0 30px}
+.story-lede{font:500 clamp(22px,1.9vw,27px)/1.5 var(--serif);color:var(--black);max-width:34ch;margin-bottom:22px}
+.story-lede::first-line{letter-spacing:.01em}
+.story-copy .lede{max-width:46ch}
+.story-copy .more{margin-top:30px}
 .arcade{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .bay{display:flex;flex-direction:column}
 .bay .arch{aspect-ratio:3/3.95}
@@ -423,6 +430,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .chapter-grid{gap:56px}
   .chapter-art{margin-bottom:-200px}
   .band-in{gap:0 40px}
+  .story{gap:48px}
   .window-grid{grid-template-columns:1fr;gap:44px}
   .steps{grid-template-columns:repeat(2,1fr)}
   .stepc:nth-child(3){border-left:0;padding-left:0}
@@ -451,7 +459,11 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .ledger-item{border-left:0;padding:22px 0;border-top:1px solid var(--rule-lt)}
   .ledger-item:first-child{border-top:0}
   .chapter-top{padding:90px 0 0}
-  .chapter-grid,.sec-head,.coast-grid,.faq-grid,.door-grid,.creds-row{grid-template-columns:1fr;gap:36px}
+  .chapter-grid,.sec-head,.coast-grid,.faq-grid,.door-grid,.creds-row,.story{grid-template-columns:1fr;gap:36px}
+  .story{margin-bottom:64px}
+  .story-art{order:2;width:82%}
+  .story-copy{order:1}
+  .story-lede{font-size:21px}
   .chapter-art{order:2;margin:0 0 -90px;width:82%}
   .chapter-copy{order:1;padding:0}
   .band-in{display:flex;flex-direction:column;gap:0;padding:130px 0 0}
@@ -626,26 +638,32 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 <!-- ═════ services · the arcade ═════ -->
 <section class="services" id="services">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="rv"><span class="eyebrow"><i>II</i> What we build</span><h2 class="h2">Four ways to <em>come home</em> to the Lowcountry.</h2></div>
-      <p class="lede rv d1">Every service runs through the same in-house team, the same fixed bid and the same 3D walk-through. Only the house changes.</p>
+    <div class="story">
+      <figure class="story-art rv"><div class="arch"><img src="img/w/porch-portrait-woman-golden-hour-1200.webp" width="1200" height="1600" loading="lazy" alt="Illustrative: a woman on the deep piazza of a Lowcountry home at golden hour, one hand on the white railing, looking out to the live oaks and the marsh"></div><figcaption class="cap">Illustrative · a Lowcountry piazza at golden hour</figcaption></figure>
+      <div class="story-copy rv d1">
+        <span class="eyebrow"><i>II</i> What we build</span>
+        <h2 class="h2">Four ways to <em>come home</em> to the Lowcountry.</h2>
+        <p class="story-lede">It starts on the porch. A lot you have walked at low tide, a sketch on the back of the survey, and a conversation about how you want to live: where the morning light lands, which room the family gathers in, how far the porch should run. From that conversation RAM draws, prices and builds one of four kinds of home.</p>
+        <p class="lede">Every one runs through the same in-house team, the same fixed bid and the same 3D walk-through. Only the house changes.</p>
+        <a class="more" href="#door">Begin the conversation <span>&rarr;</span></a>
+      </div>
     </div>
     <div class="arcade">
       <a class="bay rv" href="#door">
         <div class="arch"><img src="img/w/ram-two-storey-porches-800.webp" width="800" height="569" loading="lazy" alt="A RAM custom home with two storeys of deep covered porches and black steel railings"></div>
-        <div class="bay-body"><span class="n">i</span><h3>Custom Homes</h3><p>Ground-up homes drawn for your lot, priced as a fixed bid.</p><ul><li>Lot evaluation</li><li>In-house architecture</li><li>Fixed-bid pricing</li></ul><span class="more">Custom homes <span>&rarr;</span></span></div>
+        <div class="bay-body"><span class="n">i</span><h3>Custom Homes</h3><p>Ground-up homes drawn for your lot and your light, priced as a fixed bid.</p><ul><li>Lot evaluation</li><li>In-house architecture</li><li>Fixed-bid pricing</li></ul><span class="more">Custom homes <span>&rarr;</span></span></div>
       </a>
       <a class="bay rv d1" href="#door">
         <div class="arch"><img src="img/w/isle-of-palms-elevated-beach-house-700.webp" width="700" height="938" loading="lazy" alt="Illustrative elevated beach house on white pilings behind grassy dunes on Isle of Palms"></div>
-        <div class="bay-body"><span class="n">ii</span><h3>Coastal &amp; Elevated</h3><p>Raised beach and marsh-front homes built for flood, wind and salt.</p><ul><li>Flood-zone design</li><li>Wind-rated envelope</li><li>Salt-air materials</li></ul><span class="more">Coastal homes <span>&rarr;</span></span></div>
+        <div class="bay-body"><span class="n">ii</span><h3>Coastal &amp; Elevated</h3><p>Raised above the flood line and built for wind and salt, with the porch where the breeze is.</p><ul><li>Flood-zone design</li><li>Wind-rated envelope</li><li>Salt-air materials</li></ul><span class="more">Coastal homes <span>&rarr;</span></span></div>
       </a>
       <a class="bay rv d2" href="#door">
         <div class="arch"><img src="img/w/ram-craftsman-porte-cochere-800.webp" width="800" height="533" loading="lazy" alt="A RAM craftsman home with a screened porch and stone porte-cochere"></div>
-        <div class="bay-body"><span class="n">iii</span><h3>Renovations</h3><p>Whole-home remodels and additions for the right lot and the wrong layout.</p><ul><li>Whole-home remodels</li><li>Additions</li><li>Historic review</li></ul><span class="more">Renovations <span>&rarr;</span></span></div>
+        <div class="bay-body"><span class="n">iii</span><h3>Renovations</h3><p>The right lot and the wrong layout: remodels and additions that keep what you love.</p><ul><li>Whole-home remodels</li><li>Additions</li><li>Historic review</li></ul><span class="more">Renovations <span>&rarr;</span></span></div>
       </a>
       <a class="bay rv d3" href="#door">
         <div class="arch"><img src="img/w/ram-3d-rendering-modern-800.webp" width="800" height="600" loading="lazy" alt="A RAM 3D rendering of a modern three-storey home with a motor court"></div>
-        <div class="bay-body"><span class="n">iv</span><h3>Design-Build</h3><p>One firm, one contract, one drawing and one budget, start to keys.</p><ul><li>One contract</li><li>One accountable team</li><li>3D walk-through</li></ul><span class="more">Design-build <span>&rarr;</span></span></div>
+        <div class="bay-body"><span class="n">iv</span><h3>Design-Build</h3><p>One firm, one contract, one drawing and one budget, from the first sketch to the keys.</p><ul><li>One contract</li><li>One accountable team</li><li>3D walk-through</li></ul><span class="more">Design-build <span>&rarr;</span></span></div>
       </a>
     </div>
     <p class="svc-src">Bays i, iii and iv: RAM homes and renderings, Charlotte, NC · Bay ii: illustrative</p>
