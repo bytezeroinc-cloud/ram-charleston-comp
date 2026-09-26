@@ -240,7 +240,8 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 .area:hover .arch img{transform:scale(1.04)}
 .area-meta{padding:22px 0 0;border-top:1px solid var(--rule-lt);margin-top:20px;min-height:150px}
 .area-meta small{font:500 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--amber)}
-.area h3{font:500 clamp(24px,2.4vw,36px)/1.05 var(--serif);margin:10px 0 0}
+.area h3{font:500 36px/1.05 var(--serif);margin:10px 0 0;transition:font-size .7s var(--ease)}
+.area:not(.is-open) h3{font-size:23px}
 .area p{font-size:14.5px;line-height:1.6;color:rgba(243,243,243,.7);margin-top:10px}
 .area .more{margin-top:14px}
 .area p,.area .more{opacity:0;transform:translateY(8px);transition:opacity .6s var(--ease) .3s,transform .6s var(--ease) .3s}
@@ -439,7 +440,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .area .arch{flex:none;aspect-ratio:3/4.15;margin-top:0!important}
   .area:not(.is-open) .arch img{filter:none}
   .area-meta{min-height:0}
-  .area h3{font-size:24px}
+  .area h3,.area:not(.is-open) h3{font-size:24px}
   .area p,.area .more{display:none}
   .window{padding:90px 0}
   .window-grid{gap:36px}
