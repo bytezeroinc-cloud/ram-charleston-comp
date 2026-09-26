@@ -178,26 +178,36 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 
 /* ── services · the arcade on the tint ───────────────────────────────── */
 .services{background:var(--tint);padding:120px 0}
-.story{display:grid;grid-template-columns:.86fr 1.14fr;gap:96px;align-items:center;margin-bottom:96px}
-.story-art .arch{aspect-ratio:3/3.75}
-.story-copy .h2{margin:22px 0 30px}
-.story-lede{font:500 clamp(22px,1.9vw,27px)/1.5 var(--serif);color:var(--black);max-width:34ch;margin-bottom:22px}
-.story-lede::first-line{letter-spacing:.01em}
-.story-copy .lede{max-width:46ch}
-.story-copy .more{margin-top:30px}
-.arcade{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.bay{display:flex;flex-direction:column}
-.bay .arch{aspect-ratio:3/3.95}
-.bay .arch img{transition:transform 1.3s var(--ease)}
-.bay:hover .arch img{transform:scale(1.05)}
-.bay-body{padding:28px 0 0;display:flex;flex-direction:column;flex:1}
-.bay .n{font:italic 500 15px/1 var(--serif);letter-spacing:.06em;color:var(--red)}
-.bay h3{font:600 29px/1.1 var(--serif);color:var(--black);margin-top:10px}
-.bay p{font-size:15px;line-height:1.6;color:var(--muted);margin:12px 0 18px}
-.bay ul{list-style:none;border-top:1px solid var(--rule);margin-bottom:22px}
-.bay li{font-size:13px;letter-spacing:.06em;padding:9px 0;border-bottom:1px solid var(--rule);color:var(--text)}
-.bay .more{margin-top:auto}
-.svc-src{margin-top:40px;font:400 11px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.svc-acc{display:flex;height:700px;background:var(--black);overflow:hidden}
+.svc-pane{position:relative;flex:1;min-width:0;overflow:hidden;border-left:1px solid rgba(243,243,243,.12);transition:flex 1.1s var(--ease);color:var(--alabaster);display:block}
+.svc-pane:first-child{border-left:0}
+.svc-pane.is-open{flex:2.6}
+.svc-pane>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(.85);transform:scale(1.06);transition:filter .9s var(--ease),transform 1.4s var(--ease)}
+.svc-pane.is-open>img{filter:brightness(.8) saturate(1);transform:scale(1)}
+.svc-pane::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,6,.88) 0%,rgba(5,5,6,.2) 55%,rgba(5,5,6,.3) 100%);pointer-events:none}
+.svc-tag{position:absolute;right:24px;top:28px;bottom:28px;z-index:2;display:flex;align-items:flex-end;gap:12px;pointer-events:none}
+.svc-tag::before{content:"";width:3px;height:56px;background:var(--amber);align-self:flex-end;transition:height .5s var(--ease)}
+.svc-pane.is-open .svc-tag::before{height:84px}
+.svc-tag b{writing-mode:vertical-rl;transform:rotate(180deg);font:500 26px/1 var(--serif);letter-spacing:.04em;white-space:nowrap;color:var(--alabaster)}
+.svc-body{position:absolute;left:30px;right:96px;bottom:30px;z-index:2;max-width:340px;opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease) .3s,transform .55s var(--ease) .3s}
+.svc-pane.is-open .svc-body{opacity:1;transform:none}
+.svc-body .n{font:italic 500 15px/1 var(--serif);color:var(--amber)}
+.svc-body h3{font:600 32px/1.1 var(--serif);margin-top:10px}
+.svc-body p{font:300 15px/1.6 var(--sans);color:rgba(243,243,243,.84);margin:12px 0 16px}
+.svc-body ul{list-style:none;border-top:1px solid rgba(243,243,243,.28);margin-bottom:18px}
+.svc-body li{font:400 13px/1 var(--sans);letter-spacing:.06em;padding:10px 0;border-bottom:1px solid rgba(243,243,243,.28)}
+.svc-body .more{color:var(--alabaster)}
+.svc-face{position:relative;flex:0 0 40%;margin:0;overflow:hidden;color:var(--alabaster);border-left:1px solid rgba(243,243,243,.12)}
+.svc-face>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%}
+.svc-face::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,6,.95) 0%,rgba(5,5,6,.8) 30%,rgba(5,5,6,.35) 46%,rgba(5,5,6,0) 60%)}
+.svc-face figcaption{position:absolute;left:34px;right:34px;bottom:28px;z-index:2}
+.svc-face .h2{font-size:clamp(28px,2.2vw,32px);margin:14px 0 12px;color:var(--alabaster)}
+.svc-face .h2 em{color:var(--amber)}
+.svc-face .eyebrow{color:var(--amber)}
+.svc-face p{font:500 15.5px/1.5 var(--serif);color:rgba(243,243,243,.88);max-width:40ch}
+.svc-face .more{color:var(--alabaster);margin-top:16px}
+.svc-face .cap{display:block;margin-top:14px;color:rgba(243,243,243,.5)}
+.svc-src{margin-top:26px;font:400 11px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
 /* ── the window · a walk-through drawn in four beats (black) ─────────── */
 .window{background:var(--black);padding:120px 0;color:var(--alabaster);position:relative;overflow:hidden}
@@ -424,13 +434,14 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .hdr-m{display:flex;gap:10px;justify-content:flex-end;grid-column:3}
   .hdr-m a,.hdr-m button{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(243,243,243,.4);background:rgba(5,5,6,.3);color:var(--alabaster);cursor:pointer}
   .hdr.is-solid .hdr-m a,.hdr.is-solid .hdr-m button{border-color:var(--rule);background:transparent;color:var(--black)}
-  .arcade{grid-template-columns:repeat(2,1fr)}
+  .svc-acc{height:640px}
+  .svc-face{flex:0 0 42%}
+  .svc-body{max-width:300px;right:80px}
   .acc{height:540px}
   .figs{grid-template-columns:repeat(2,1fr)}
   .chapter-grid{gap:56px}
   .chapter-art{margin-bottom:-200px}
   .band-in{gap:0 40px}
-  .story{gap:48px}
   .window-grid{grid-template-columns:1fr;gap:44px}
   .steps{grid-template-columns:repeat(2,1fr)}
   .stepc:nth-child(3){border-left:0;padding-left:0}
@@ -459,11 +470,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .ledger-item{border-left:0;padding:22px 0;border-top:1px solid var(--rule-lt)}
   .ledger-item:first-child{border-top:0}
   .chapter-top{padding:90px 0 0}
-  .chapter-grid,.sec-head,.coast-grid,.faq-grid,.door-grid,.creds-row,.story{grid-template-columns:1fr;gap:36px}
-  .story{margin-bottom:64px}
-  .story-art{order:2;width:82%}
-  .story-copy{order:1}
-  .story-lede{font-size:21px}
+  .chapter-grid,.sec-head,.coast-grid,.faq-grid,.door-grid,.creds-row{grid-template-columns:1fr;gap:36px}
   .chapter-art{order:2;margin:0 0 -90px;width:82%}
   .chapter-copy{order:1;padding:0}
   .band-in{display:flex;flex-direction:column;gap:0;padding:130px 0 0}
@@ -477,9 +484,19 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .sec-head{margin-bottom:44px}
   .sec-head .lede{justify-self:start;padding-bottom:0}
   .services,.process,.work,.coast,.faq,.door{padding:90px 0}
+  .svc-src{margin-top:18px}
   .areas{padding-top:90px}
-  .arcade{grid-template-columns:1fr;gap:44px}
-  .bay .arch{aspect-ratio:4/3.5}
+  .svc-acc{flex-direction:column;height:auto}
+  .svc-face{flex:none;order:-1;aspect-ratio:3/3.7;border-left:0}
+  .svc-face figcaption{left:20px;right:20px;bottom:22px}
+  .svc-face .h2{font-size:28px}
+  .svc-face p{font-size:15.5px}
+  .svc-pane{flex:none;min-height:0;border-left:0;border-top:1px solid rgba(243,243,243,.12)}
+  .svc-pane>img{filter:brightness(.55) saturate(.95);transform:none}
+  .svc-pane.is-open>img{filter:brightness(.62)}
+  .svc-tag{display:none}
+  .svc-body{position:relative;left:0;right:0;bottom:0;max-width:none;opacity:1;transform:none;padding:150px 20px 24px}
+  .svc-body h3{font-size:26px}
   .acc{display:grid;grid-template-columns:1fr 1fr;gap:18px;height:auto}
   .area .arch{flex:none;aspect-ratio:3/4.15;margin-top:0!important}
   .area:not(.is-open) .arch img{filter:none}
@@ -638,35 +655,39 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 <!-- ═════ services · the arcade ═════ -->
 <section class="services" id="services">
   <div class="wrap">
-    <div class="story">
-      <figure class="story-art rv"><div class="arch"><img src="img/w/porch-portrait-woman-golden-hour-1200.webp" width="1200" height="1600" loading="lazy" alt="Illustrative: a woman on the deep piazza of a Lowcountry home at golden hour, one hand on the white railing, looking out to the live oaks and the marsh"></div><figcaption class="cap">Illustrative · a Lowcountry piazza at golden hour</figcaption></figure>
-      <div class="story-copy rv d1">
-        <span class="eyebrow"><i>II</i> What we build</span>
-        <h2 class="h2">Four ways to <em>come home</em> to the Lowcountry.</h2>
-        <p class="story-lede">It starts on the porch. A lot you have walked at low tide, a sketch on the back of the survey, and a conversation about how you want to live: where the morning light lands, which room the family gathers in, how far the porch should run. From that conversation RAM draws, prices and builds one of four kinds of home.</p>
-        <p class="lede">Every one runs through the same in-house team, the same fixed bid and the same 3D walk-through. Only the house changes.</p>
-        <a class="more" href="#door">Begin the conversation <span>&rarr;</span></a>
-      </div>
+    <div class="svc-acc" id="svc" aria-label="What we build">
+      <a class="svc-pane is-open" href="#door">
+        <img src="img/w/ram-two-storey-porches-800.webp" width="800" height="569" loading="lazy" alt="A RAM custom home with two storeys of deep covered porches and black steel railings">
+        <span class="svc-tag" aria-hidden="true"><b>Custom Homes</b></span>
+        <div class="svc-body"><span class="n">i</span><h3>Custom Homes</h3><p>Ground-up homes drawn for your lot and your light, priced as a fixed bid.</p><ul><li>Lot evaluation</li><li>In-house architecture</li><li>Fixed-bid pricing</li></ul><span class="more">Custom homes <span>&rarr;</span></span></div>
+      </a>
+      <a class="svc-pane" href="#door">
+        <img src="img/w/isle-of-palms-elevated-beach-house-700.webp" width="700" height="938" loading="lazy" alt="Illustrative elevated beach house on white pilings behind grassy dunes on Isle of Palms">
+        <span class="svc-tag" aria-hidden="true"><b>Coastal &amp; Elevated</b></span>
+        <div class="svc-body"><span class="n">ii</span><h3>Coastal &amp; Elevated</h3><p>Raised above the flood line and built for wind and salt, with the porch where the breeze is.</p><ul><li>Flood-zone design</li><li>Wind-rated envelope</li><li>Salt-air materials</li></ul><span class="more">Coastal homes <span>&rarr;</span></span></div>
+      </a>
+      <a class="svc-pane" href="#door">
+        <img src="img/w/ram-craftsman-porte-cochere-800.webp" width="800" height="533" loading="lazy" alt="A RAM craftsman home with a screened porch and stone porte-cochere">
+        <span class="svc-tag" aria-hidden="true"><b>Renovations</b></span>
+        <div class="svc-body"><span class="n">iii</span><h3>Renovations</h3><p>The right lot and the wrong layout: remodels and additions that keep what you love.</p><ul><li>Whole-home remodels</li><li>Additions</li><li>Historic review</li></ul><span class="more">Renovations <span>&rarr;</span></span></div>
+      </a>
+      <a class="svc-pane" href="#door">
+        <img src="img/w/ram-3d-rendering-modern-800.webp" width="800" height="600" loading="lazy" alt="A RAM 3D rendering of a modern three-storey home with a motor court">
+        <span class="svc-tag" aria-hidden="true"><b>Design-Build</b></span>
+        <div class="svc-body"><span class="n">iv</span><h3>Design-Build</h3><p>One firm, one contract, one drawing and one budget, from the first sketch to the keys.</p><ul><li>One contract</li><li>One accountable team</li><li>3D walk-through</li></ul><span class="more">Design-build <span>&rarr;</span></span></div>
+      </a>
+      <figure class="svc-face">
+        <img src="img/w/porch-portrait-woman-golden-hour-1200.webp" width="1200" height="1607" loading="lazy" alt="Illustrative: a woman on the deep piazza of a Lowcountry home at golden hour, one hand on the white railing, looking out to the live oaks and the marsh">
+        <figcaption>
+          <span class="eyebrow"><i>II</i> What we build</span>
+          <h2 class="h2">Four ways to <em>come home</em> to the Lowcountry.</h2>
+          <p>It starts on the porch: a lot walked at low tide, a sketch on the back of the survey, a conversation about how you want to live. From there RAM draws, prices and builds one of four kinds of home, with one team, one fixed bid and a 3D walk-through.</p>
+          <a class="more" href="#door">Begin the conversation <span>&rarr;</span></a>
+          <small class="cap">Illustrative · a Lowcountry piazza at golden hour</small>
+        </figcaption>
+      </figure>
     </div>
-    <div class="arcade">
-      <a class="bay rv" href="#door">
-        <div class="arch"><img src="img/w/ram-two-storey-porches-800.webp" width="800" height="569" loading="lazy" alt="A RAM custom home with two storeys of deep covered porches and black steel railings"></div>
-        <div class="bay-body"><span class="n">i</span><h3>Custom Homes</h3><p>Ground-up homes drawn for your lot and your light, priced as a fixed bid.</p><ul><li>Lot evaluation</li><li>In-house architecture</li><li>Fixed-bid pricing</li></ul><span class="more">Custom homes <span>&rarr;</span></span></div>
-      </a>
-      <a class="bay rv d1" href="#door">
-        <div class="arch"><img src="img/w/isle-of-palms-elevated-beach-house-700.webp" width="700" height="938" loading="lazy" alt="Illustrative elevated beach house on white pilings behind grassy dunes on Isle of Palms"></div>
-        <div class="bay-body"><span class="n">ii</span><h3>Coastal &amp; Elevated</h3><p>Raised above the flood line and built for wind and salt, with the porch where the breeze is.</p><ul><li>Flood-zone design</li><li>Wind-rated envelope</li><li>Salt-air materials</li></ul><span class="more">Coastal homes <span>&rarr;</span></span></div>
-      </a>
-      <a class="bay rv d2" href="#door">
-        <div class="arch"><img src="img/w/ram-craftsman-porte-cochere-800.webp" width="800" height="533" loading="lazy" alt="A RAM craftsman home with a screened porch and stone porte-cochere"></div>
-        <div class="bay-body"><span class="n">iii</span><h3>Renovations</h3><p>The right lot and the wrong layout: remodels and additions that keep what you love.</p><ul><li>Whole-home remodels</li><li>Additions</li><li>Historic review</li></ul><span class="more">Renovations <span>&rarr;</span></span></div>
-      </a>
-      <a class="bay rv d3" href="#door">
-        <div class="arch"><img src="img/w/ram-3d-rendering-modern-800.webp" width="800" height="600" loading="lazy" alt="A RAM 3D rendering of a modern three-storey home with a motor court"></div>
-        <div class="bay-body"><span class="n">iv</span><h3>Design-Build</h3><p>One firm, one contract, one drawing and one budget, from the first sketch to the keys.</p><ul><li>One contract</li><li>One accountable team</li><li>3D walk-through</li></ul><span class="more">Design-build <span>&rarr;</span></span></div>
-      </a>
-    </div>
-    <p class="svc-src">Bays i, iii and iv: RAM homes and renderings, Charlotte, NC · Bay ii: illustrative</p>
+    <p class="svc-src">Panels i, iii and iv: RAM homes and renderings, Charlotte, NC · Panel ii and the portrait: illustrative</p>
   </div>
 </section>
 
@@ -880,15 +901,17 @@ mo.addEventListener('click',()=>setM(true));document.getElementById('mclose').ad
 mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setM(false)));
 /* header state: alabaster masthead once the hero has scrolled */
 const hdr=document.getElementById('hdr');const onS=()=>hdr.classList.toggle('is-solid',scrollY>80);addEventListener('scroll',onS,{passive:true});onS();
-/* the colonnade opens: hover or focus opens a bay; otherwise the bays take turns while in view */
-const acc=document.getElementById('acc');const wide=()=>matchMedia('(min-width:861px)').matches;const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-if(acc){const bays=[...acc.querySelectorAll('.area')];let cur=0,hold=false,timer=0;
-  const openB=i=>{cur=i;bays.forEach((b,k)=>b.classList.toggle('is-open',k===i))};
-  const start=()=>{clearInterval(timer);if(!calm)timer=setInterval(()=>{if(!hold&&wide())openB((cur+1)%bays.length)},3800)};
-  bays.forEach((b,i)=>{b.addEventListener('mouseenter',()=>{hold=true;openB(i)});b.addEventListener('focusin',()=>{hold=true;openB(i)});
-    b.addEventListener('click',e=>{if(wide()&&!b.classList.contains('is-open')){e.preventDefault();hold=true;openB(i)}})});
-  acc.addEventListener('mouseleave',()=>{hold=false;start()});acc.addEventListener('focusout',e=>{if(!acc.contains(e.relatedTarget)){hold=false}});
-  new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():clearInterval(timer))).observe(acc)}
+/* accordions: hover, focus or click opens a panel; otherwise the panels take turns while in view */
+const wide=()=>matchMedia('(min-width:861px)').matches;const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function accordion(root,sel,every){if(!root)return;const items=[...root.querySelectorAll(sel)];let cur=Math.max(0,items.findIndex(x=>x.classList.contains('is-open'))),hold=false,timer=0;
+  const openIt=i=>{cur=i;items.forEach((b,k)=>b.classList.toggle('is-open',k===i))};
+  const start=()=>{clearInterval(timer);if(!calm)timer=setInterval(()=>{if(!hold&&wide())openIt((cur+1)%items.length)},every)};
+  items.forEach((b,i)=>{b.addEventListener('mouseenter',()=>{hold=true;openIt(i)});b.addEventListener('focusin',()=>{hold=true;openIt(i)});
+    b.addEventListener('click',e=>{if(wide()&&!b.classList.contains('is-open')){e.preventDefault();hold=true;openIt(i)}})});
+  root.addEventListener('mouseleave',()=>{hold=false;start()});root.addEventListener('focusout',e=>{if(!root.contains(e.relatedTarget)){hold=false}});
+  new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():clearInterval(timer))).observe(root)}
+accordion(document.getElementById('acc'),'.area',3800);
+accordion(document.getElementById('svc'),'.svc-pane',4400);
 /* the work slider: arrows, drag, keyboard, a progress rule */
 const tr=document.getElementById('track');if(tr){const bar=document.querySelector('.slider-bar i');
   const upd=()=>{const max=tr.scrollWidth-tr.clientWidth,f=tr.clientWidth/tr.scrollWidth;bar.style.width=(f*100)+'%';bar.style.left=(max>0?tr.scrollLeft/max*(100-f*100):0)+'%'};
