@@ -135,14 +135,17 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 .cyc b.in{opacity:0;transform:translateY(.5em);transition:none}
 .hero-note{position:absolute;right:24px;bottom:26px;z-index:2;font:400 10.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(243,243,243,.55)}
 
-/* ── the ledger welded to the hero base: three facts, hairlines, no boxes ─────────── */
-.ledger{background:var(--black);color:var(--alabaster);border-top:1px solid var(--rule-lt)}
-.ledger-row{display:grid;grid-template-columns:repeat(3,1fr)}
-.ledger-item{padding:40px 40px 40px 36px;display:grid;grid-template-columns:auto 1fr;gap:8px 22px;border-left:1px solid var(--rule-lt)}
-.ledger-item:first-child{border-left:0;padding-left:0}
-.ledger-item .mk{grid-row:span 2;width:36px;height:46px;border:1px solid var(--amber);border-bottom:0;border-radius:var(--arch);display:grid;place-items:end center;padding-bottom:6px;font:italic 500 19px/1 var(--serif);color:var(--amber)}
-.ledger-item h3{font:600 25px/1.1 var(--serif);color:var(--alabaster)}
-.ledger-item p{font:300 15px/1.6 var(--sans);color:rgba(243,243,243,.72)}
+/* ── the promise: one arch photograph, three ruled rows (black) ────────────── */
+.promise{background:var(--black);color:var(--alabaster);border-top:1px solid var(--rule-lt)}
+.promise-in{display:grid;grid-template-columns:.36fr .64fr;gap:90px;align-items:center;padding:84px 0 88px}
+.promise-art{margin:0}
+.promise-art .arch{aspect-ratio:3/3.4}
+.promise-copy .eyebrow{margin-bottom:26px}
+.promises{list-style:none;border-top:1px solid var(--rule-lt)}
+.promises li{display:grid;grid-template-columns:72px 1fr;gap:20px;padding:30px 0 30px;border-bottom:1px solid var(--rule-lt);align-items:start}
+.promises li i{font:italic 500 40px/1 var(--serif);color:var(--amber);padding-top:2px}
+.promises h3{font:600 29px/1.1 var(--serif);color:var(--alabaster)}
+.promises p{font:300 15.5px/1.65 var(--sans);color:rgba(243,243,243,.74);margin-top:8px;max-width:50ch}
 
 /* ── the chapter: the piazza hangs from the alabaster into the open-room band ── */
 .chapter{background:var(--alabaster);position:relative}
@@ -466,9 +469,11 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .hero h1 br{display:none}
   .kicker{font-size:10.5px;letter-spacing:.24em;margin-bottom:20px}
   .chips{gap:8px 18px}
-  .ledger-row{grid-template-columns:1fr}
-  .ledger-item{border-left:0;padding:22px 0;border-top:1px solid var(--rule-lt)}
-  .ledger-item:first-child{border-top:0}
+  .promise-in{grid-template-columns:1fr;gap:40px;padding:64px 0 70px}
+  .promise-art{width:74%}
+  .promises li{grid-template-columns:44px 1fr;gap:14px;padding:22px 0}
+  .promises li i{font-size:30px}
+  .promises h3{font-size:24px}
   .chapter-top{padding:90px 0 0}
   .chapter-grid,.sec-head,.coast-grid,.faq-grid,.door-grid,.creds-row{grid-template-columns:1fr;gap:36px}
   .chapter-art{order:2;margin:0 0 -90px;width:82%}
@@ -613,14 +618,23 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   <p class="hero-note">Illustrative Lowcountry scene</p>
 </section>
 
-<!-- ═════ the ledger, welded to the hero base ═════ -->
-<div class="ledger">
-  <div class="wrap ledger-row">
-    <div class="ledger-item rv"><span class="mk">i</span><h3>One firm, one drawing</h3><p>Architects, designers and builders under one contract. Nothing lost between the plan and the site.</p></div>
-    <div class="ledger-item rv d1"><span class="mk">ii</span><h3>A fixed bid</h3><p>Every allowance listed line by line, so you know the number before you sign.</p></div>
-    <div class="ledger-item rv d2"><span class="mk">iii</span><h3>Walk it before we build</h3><p>An immersive 3D tour of every room and finish, exactly as it will be delivered.</p></div>
+<!-- ═════ the promise · one drawing, a fixed bid, a walk-through ═════ -->
+<section class="promise on-dark" aria-label="How every RAM home is built">
+  <div class="wrap promise-in">
+    <figure class="promise-art rv">
+      <div class="arch"><img src="img/w/drafting-table-lowcountry-drawings-1200.webp" width="1200" height="1600" loading="lazy" alt="Illustrative: architectural drawings of a Lowcountry home on a walnut drafting table, a basswood model, a brass scale rule and a pencil in late-afternoon light"></div>
+      <figcaption class="cap">Illustrative · the drawing comes first</figcaption>
+    </figure>
+    <div class="promise-copy">
+      <span class="eyebrow rv">How every RAM home is built</span>
+      <ol class="promises">
+        <li class="rv"><i>i</i><div><h3>One firm, one drawing</h3><p>Architects, designers and builders under one contract. Nothing lost between the plan and the site.</p></div></li>
+        <li class="rv d1"><i>ii</i><div><h3>A fixed bid</h3><p>Every allowance listed line by line, so you know the number before you sign.</p></div></li>
+        <li class="rv d2"><i>iii</i><div><h3>Walk it before we build</h3><p>An immersive 3D tour of every room and finish, exactly as it will be delivered.</p></div></li>
+      </ol>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- ═════ the chapter · twenty years, the piazza, the open room and the numbers, one composition ═════ -->
 <section class="chapter" id="about">
