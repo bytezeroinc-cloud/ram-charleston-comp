@@ -1,0 +1,153 @@
+/* ── Fanlight II · inner pages (About, Questions, Contact, the towns) ─────────────────────── */
+/* Everything here sits on top of charleston.css: same tokens, arches, eyebrows, ledger, door and footer. */
+
+.hdr-nav a[aria-current="page"]::after{transform:scaleX(1)}
+.mnav nav a[aria-current="page"] em,.mnav nav a[aria-current="page"]{color:var(--amber)}
+
+/* ── page hero: copy left, a portrait arch standing on the floor at right ── */
+.phero{position:relative;background:var(--black-night);color:var(--alabaster);padding:150px 0 0;overflow:hidden}
+.phero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:end}
+.phero-copy{padding-bottom:84px}
+.phero h1{font:500 clamp(46px,5.8vw,88px)/.98 var(--serif);letter-spacing:-.015em;margin:22px 0 22px}
+.phero h1 em{color:var(--amber);font-weight:400}
+.phero .lede{color:rgba(243,243,243,.82);max-width:46ch}
+.phero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:34px;padding-top:22px;border-top:1px solid var(--rule-lt);max-width:640px;list-style:none}
+.phero-meta li{font:400 12.5px/1.4 var(--sans);letter-spacing:.08em;color:rgba(243,243,243,.8);display:flex;align-items:baseline;gap:9px}
+.phero-meta li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--amber);align-self:center}
+.phero-art .arch{margin-bottom:-1px}
+.phero-art .arch img{transform:scale(1.04);animation:drift 22s ease-out forwards}
+
+/* ── the conditions: the survey rail on a light ground, every row open ── */
+.tconds{background:var(--alabaster);padding:100px 0 110px}
+.tconds-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:start}
+.rail-lt{border-left:1px solid var(--rule)}
+.rrow{position:relative;display:grid;grid-template-columns:58px 1fr;padding:26px 0 28px 30px;border-top:1px solid var(--rule)}
+.rrow:first-child{border-top:0;padding-top:4px}
+.rrow::before{content:"";position:absolute;left:-5px;top:36px;width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 6px rgba(226,60,65,.14)}
+.rrow:first-child::before{top:14px}
+.rnum{font:italic 500 15px/1 var(--serif);color:var(--red);padding-top:9px}
+.rbody h3{font:500 28px/1.15 var(--serif);color:var(--black)}
+.rbody p{margin-top:10px;font:300 15.5px/1.65 var(--sans);color:var(--muted);max-width:52ch}
+.rbody small{display:block;margin-top:12px;font:500 10.5px/1.5 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.tconds-art{position:sticky;top:110px;display:grid;gap:22px}
+.tconds-art .arch:last-child{width:62%;justify-self:end}
+
+/* ── the places: a ruled index of neighbourhoods on night ── */
+.tplaces{background:var(--black-night);color:var(--alabaster);padding:100px 0 96px}
+.places{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule-lt);border-left:1px solid var(--rule-lt)}
+.places li{padding:26px 26px 28px;border-right:1px solid var(--rule-lt);border-bottom:1px solid var(--rule-lt);font:500 26px/1.15 var(--serif);display:flex;align-items:center;gap:16px}
+.places li::before{content:"";flex:none;width:14px;height:17px;border:1.5px solid var(--amber);border-bottom:0;border-radius:var(--arch)}
+.tother{margin-top:56px;display:flex;align-items:center;gap:34px;flex-wrap:wrap}
+.tother .datum-lab{margin:0}
+.tother ul{list-style:none;display:flex;gap:28px;flex-wrap:wrap}
+.tother a{font:italic 500 22px/1 var(--serif);color:var(--alabaster)}
+.tother a span{color:var(--amber);margin-left:6px}
+
+/* ── about: the RAM way ── */
+.story{background:var(--alabaster);padding:110px 0}
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:96px;align-items:start}
+.story-art{position:sticky;top:110px}
+.story-art .cap{margin-top:12px;font:400 10.5px/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.story-copy .h2{margin:22px 0 28px}
+.story-copy p{font:300 17px/1.75 var(--sans);color:var(--text);max-width:58ch;margin-bottom:20px}
+.story-copy .chips{max-width:none;border-top-color:var(--rule);margin-top:30px}
+.story-copy .chips li{color:var(--muted)}
+
+/* ── about: the Charlotte range ── */
+.range{background:var(--black);color:var(--alabaster);padding:100px 0 96px}
+.range-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.range-grid figure{margin:0}
+.range-grid figcaption{margin-top:14px;font:400 10.5px/1.5 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(243,243,243,.55)}
+.range-foot{margin-top:40px;padding-top:22px;border-top:1px solid var(--rule-lt);font:300 15px/1.6 var(--sans);color:rgba(243,243,243,.7)}
+.range-foot a{color:var(--alabaster);text-decoration:underline;text-underline-offset:3px}
+
+/* ── about: the Charleston division ── */
+.division{background:var(--tint);padding:110px 0 96px}
+.division-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:90px;align-items:start}
+.division-copy p{font:300 17px/1.75 var(--sans);color:var(--text);max-width:56ch;margin-bottom:18px}
+.division-copy .h2{margin:22px 0 26px}
+.division-towns{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:10px;border-top:1px solid var(--rule)}
+.division-towns a{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--rule);font:500 22px/1 var(--serif);color:var(--black)}
+.division-towns a span{color:var(--red)}
+.division-facts dl{border-top:1px solid var(--black)}
+.division-facts div{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.division-facts dt{font:500 10.5px/1.6 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--red);padding-top:4px}
+.division-facts dd{font:400 16px/1.55 var(--sans);color:var(--text)}
+.division-facts dd a{text-decoration:underline;text-underline-offset:3px}
+.division .creds-row{margin-top:72px;border-top-color:var(--rule)}
+.division .creds-row p{color:var(--black)}
+.division .creds-row p em{color:var(--red)}
+.division .plates li{border:1px solid var(--rule)}
+
+/* ── questions: a sticky index beside four ruled groups on the tint ── */
+.qwrap{background:var(--tint);padding:100px 0 110px}
+.qgrid{display:grid;grid-template-columns:.32fr .68fr;gap:80px;align-items:start}
+.qindex{position:sticky;top:110px}
+.qindex .datum-lab{color:var(--muted);margin:0 0 14px}
+.qindex ul{list-style:none;border-top:1px solid var(--black)}
+.qindex a{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--rule);font:500 19px/1.2 var(--serif);color:var(--black)}
+.qindex a i{font-style:italic;color:var(--red);min-width:22px}
+.qa-h{font:500 34px/1.1 var(--serif);color:var(--black);margin-bottom:10px;display:flex;gap:14px;align-items:baseline}
+.qa-h i{font-style:italic;font-size:20px;color:var(--red)}
+.qa.faq{margin-top:0;scroll-margin-top:110px}
+.qa.faq~.qa.faq{margin-top:64px}
+.qa.faq details{border-top-color:var(--rule)}
+.qa.faq details:last-child{border-bottom-color:var(--rule)}
+.qa.faq summary{color:var(--black);font-size:21px;padding:20px 0}
+.qa.faq summary::after{border-color:var(--rule);color:var(--red)}
+.qa.faq details[open] summary::after{background:var(--black);border-color:var(--black);color:var(--alabaster)}
+.qa.faq .ans{color:var(--muted)}
+
+/* ── contact: the door as the page, then the four towns ── */
+.door-page{padding-top:160px}
+.cways{margin-top:34px;border-top:1px solid var(--rule-lt)}
+.cways div{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--rule-lt)}
+.cways dt{font:500 10.5px/1.6 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--amber);padding-top:3px}
+.cways dd{font:300 15.5px/1.6 var(--sans);color:rgba(243,243,243,.8)}
+.cways dd a{color:var(--alabaster);text-decoration:underline;text-underline-offset:3px}
+.ctowns{background:var(--alabaster);padding:100px 0 110px}
+.ctown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.ctown{display:block;color:var(--black)}
+.ctown span{display:block;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule)}
+.ctown small{display:block;font:500 10.5px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--red)}
+.ctown b{display:block;margin-top:8px;font:500 26px/1.1 var(--serif)}
+.ctown .arch img{transition:transform .8s var(--ease)}
+.ctown:hover .arch img{transform:scale(1.04)}
+
+@media (max-width:1180px){
+  .phero .wrap{gap:48px}
+  .tconds-grid,.story-grid,.division-grid{gap:56px}
+  .places{grid-template-columns:repeat(2,1fr)}
+  .range-grid{gap:18px}
+  .qgrid{gap:48px}
+}
+@media (max-width:860px){
+  .phero{padding-top:118px}
+  .phero .wrap{grid-template-columns:1fr;gap:0}
+  .phero-copy{padding-bottom:40px}
+  .phero h1{font-size:44px}
+  .phero-art{width:88%;margin:0 auto}
+  .phero-art .arch{aspect-ratio:3/3.4!important}
+  .tconds{padding:70px 0 80px}
+  .tconds-grid{grid-template-columns:1fr;gap:40px}
+  .tconds-art{position:static;grid-template-columns:1fr 1fr;align-items:end}
+  .tconds-art .arch:last-child{width:100%}
+  .rrow{grid-template-columns:44px 1fr;padding:22px 0 24px 22px}
+  .rbody h3{font-size:24px}
+  .tplaces{padding:70px 0}
+  .places{grid-template-columns:1fr 1fr}
+  .places li{font-size:20px;padding:18px 16px;gap:12px}
+  .tother{gap:18px 26px}
+  .story,.division,.range,.qwrap,.ctowns{padding:70px 0}
+  .story-grid,.division-grid,.qgrid{grid-template-columns:1fr;gap:40px}
+  .story-art{position:static}
+  .range-grid{grid-template-columns:1fr}
+  .qindex{position:static}
+  .qa.faq{scroll-margin-top:80px}
+  .ctown-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .ctown b{font-size:22px}
+  .door-page{padding-top:120px}
+  .division-towns{grid-template-columns:1fr}
+  .division-facts div{grid-template-columns:100px 1fr}
+  .cways div{grid-template-columns:78px 1fr}
+}
