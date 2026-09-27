@@ -19,5 +19,7 @@ what the 3D walk-through lets you stand inside.
 Band 705 px at 1440, 985 px at 390; no overflow; the new frame has no legible words (the plan labels are marks at web
 size). Prompt in `img/gen/prompts.json` (`drafting-table-lowcountry-drawings`).
 
-## Lovable
-Re-sync requested after this pass (markup and CSS, plus two new image files, no JS change).
+## Outcome
+**Reverted the same evening** (Rohan: *"revert it"*). The pass 09 ledger is back as the design of record; this band is kept as
+`index.pass10-promise.html.bak` and the drafting-table still remains in `img/w/` unused. Lovable was synced to the band and then
+synced back.

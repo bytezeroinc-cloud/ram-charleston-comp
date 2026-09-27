@@ -11,7 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/w/hero-lowcountry-custom-home-marsh-golden-hour-2400.webp" media="(min-width: 800px)">
+<link rel="preload" as="image" href="img/w/hero-lowcountry-custom-home-marsh-golden-hour-2400.webp" media="(min-width: 861px)">
+<link rel="preload" as="image" href="img/w/hero-lowcountry-portrait-900.webp" media="(max-width: 860px)">
 <script>document.documentElement.classList.add('js')</script>
 <style>
 /* ── Fanlight II · The Arcade · RAM Construction Charleston (Black + Amber Red) ─────────── */
@@ -456,12 +457,16 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .hdr-row{gap:14px}
   .hdr .lockup .wm small{display:none}
   .hdr .lockup .wm b{font-size:16px}
-  .hero{min-height:max(92vh,640px)}
-  .hero-img img{object-position:72% 50%}
-  .hero::after{background:linear-gradient(0deg,rgba(5,5,6,.95) 0%,rgba(5,5,6,.82) 55%,rgba(5,5,6,.45) 100%)}
+  .hero{display:block;min-height:0;background:var(--black-night)}
+  .hero-img{position:relative;inset:auto;aspect-ratio:3/4;width:100%}
+  .hero-img img{object-position:50% 50%;transform:none;animation:none}
+  .hero::after{content:none}
+  .hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,6,.9) 0%,rgba(5,5,6,0) 22%),linear-gradient(180deg,rgba(5,5,6,.45) 0%,rgba(5,5,6,0) 24%)}
+  .hero-horn{display:none}
   .hero h1 em{color:#FF5E62}
-  .hero-in{padding:120px 0 56px}
-  .hero-note{display:none}
+  .hero-in{padding:26px 0 56px}
+  .hero-note{position:absolute;right:16px;bottom:auto;top:calc(100vw * 4 / 3 - 26px);display:block;font-size:9.5px}
+  .kicker{margin-bottom:16px}
   .hero h1{font-size:46px;line-height:1.02}
   .hero h1 br{display:none}
   .kicker{font-size:10.5px;letter-spacing:.24em;margin-bottom:20px}
@@ -588,7 +593,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 <section class="hero">
   <div class="hero-img">
     <picture>
-      <source media="(max-width:800px)" srcset="img/w/hero-lowcountry-custom-home-marsh-golden-hour-1200.webp">
+      <source media="(max-width:860px)" srcset="img/w/hero-lowcountry-portrait-900.webp 900w, img/w/hero-lowcountry-portrait-1400.webp 1400w" sizes="100vw">
       <img src="img/w/hero-lowcountry-custom-home-marsh-golden-hour-2400.webp" width="2400" height="1340" fetchpriority="high" alt="A white Lowcountry custom home with double piazzas and a metal roof on the edge of a golden salt marsh at sunset, live oaks with Spanish moss either side">
     </picture>
   </div>
