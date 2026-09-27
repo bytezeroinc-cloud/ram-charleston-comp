@@ -8,7 +8,9 @@
 .phero{position:relative;background:var(--black-night);color:var(--alabaster);padding:150px 0 0;overflow:hidden}
 .phero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:end}
 .phero-copy{padding-bottom:84px}
-.phero h1{font:500 clamp(46px,5.8vw,88px)/.98 var(--serif);letter-spacing:-.015em;margin:22px 0 22px}
+.phero h1{font:500 clamp(46px,5.8vw,88px)/.98 var(--serif);letter-spacing:-.015em;margin:0 0 22px}
+.phero h1 .eyebrow{display:flex}
+.phero .display{display:block;margin-top:22px}
 .phero h1 em{color:var(--amber);font-weight:400}
 .phero .lede{color:rgba(243,243,243,.82);max-width:46ch}
 .phero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:34px;padding-top:22px;border-top:1px solid var(--rule-lt);max-width:640px;list-style:none}

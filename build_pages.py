@@ -85,7 +85,7 @@ def arch_img(name, w1, w2, alt, ratio='3/3.6', sizes='(max-width:860px) 100vw, 4
             f'width="{w1}" {ld} alt="{alt}"{st}></div>')
 
 def phero(eyebrow, h1, lede, art, meta=None, folio=None):
-    fol = f'<i>{folio}</i> ' if folio else ''
+    fol = f'<i aria-hidden="true">{folio}</i> ' if folio else ''
     m = ''
     if meta:
         m = '<ul class="phero-meta rv d2">' + ''.join(f'<li>{x}</li>' for x in meta) + '</ul>'
@@ -94,8 +94,7 @@ def phero(eyebrow, h1, lede, art, meta=None, folio=None):
 <section class="phero on-dark">
   <div class="wrap">
     <div class="phero-copy">
-      <span class="eyebrow rv">{fol}{eyebrow}</span>
-      <h1 class="rv d1">{h1}</h1>
+      <h1 class="hx rv"><span class="eyebrow">{fol}{eyebrow}</span><span class="sr-only">. </span><span class="display">{h1}</span></h1>
       <p class="lede rv d1">{lede}</p>
       {m}
     </div>
@@ -120,6 +119,7 @@ def door(folio, eyebrow, h2, lede, qs=None, page_id='door', h_tag='h2', extra_le
         <div class="faq-list rv d1">
 {faq_items(qs)}
         </div>
+        <a class="more" href="faq.html">More questions <span>&rarr;</span></a>
       </div>'''
     return f'''
 <!-- ═════ the door ═════ -->
@@ -127,8 +127,7 @@ def door(folio, eyebrow, h2, lede, qs=None, page_id='door', h_tag='h2', extra_le
   <div class="door-bg"><img src="img/w/daniel-island-waterfront-home-1200.webp" width="1200" height="1607" loading="lazy" alt=""></div>
   <div class="wrap door-grid">
     <div class="rv">
-      <span class="eyebrow">{('<i>'+folio+'</i> ') if folio else ''}{eyebrow}</span>
-      <{h_tag} class="h2">{h2}</{h_tag}>
+      <{h_tag} class="hx"><span class="eyebrow">{('<i aria-hidden="true">'+folio+'</i> ') if folio else ''}{eyebrow}</span><span class="sr-only">. </span><span class="h2">{h2}</span></{h_tag}>
       <p class="lede">{lede}</p>
       <div class="phone"><small>Charleston line</small><a href="tel:+18430000000">(843) 000-0000</a><span>843 number issued at launch · Mon to Fri, 8am to 6pm</span></div>{extra_left}{faq}
     </div>
@@ -140,7 +139,7 @@ def door(folio, eyebrow, h2, lede, qs=None, page_id='door', h_tag='h2', extra_le
 def sec_head(folio, eyebrow, h2, lede=None):
     l = f'<p class="lede rv d1">{lede}</p>' if lede else ''
     return f'''    <div class="sec-head">
-      <div class="rv"><span class="eyebrow"><i>{folio}</i> {eyebrow}</span><h2 class="h2">{h2}</h2></div>
+      <h2 class="hx rv"><span class="eyebrow"><i aria-hidden="true">{folio}</i> {eyebrow}</span><span class="sr-only">. </span><span class="h2">{h2}</span></h2>
       {l}
     </div>'''
 
@@ -160,8 +159,11 @@ def rail_lt(rows):
 
 # ── content ──────────────────────────────────────────────────────────────────
 SITE = 'https://ramconstructionsc.com'   # placeholder domain, swapped at launch
-LEDE_DOOR = "Where it is, what you want it to become, and when. We'll come back within one business day to set a time to walk it with you."
+LEDE_DOOR = "Where it is, what you want it to become, and when. We'll come back to set a time to walk it with you."
 BRAND = 'RAM Construction Charleston'
+def url(f):
+    """Route-style URL for schema: about.html -> /about (the app serves extensionless routes)."""
+    return SITE + ('/' if f == 'index.html' else '/' + f[:-5])
 
 TOWNS = {
  'mount-pleasant': dict(
@@ -316,13 +318,13 @@ def town_page(slug):
 </main>
 '''
     ld = jsonld({"@context": "https://schema.org", "@type": "WebPage", "name": f'Custom Homes in {t["name"]}, SC',
-                 "description": t['desc'], "url": f'{SITE}/{t["file"]}',
+                 "description": t['desc'], "url": url(t["file"]),
                  "about": {"@type": "Service", "serviceType": "Custom home design-build", "provider": {"@type": "GeneralContractor", "name": BRAND},
                            "areaServed": {"@type": "Place", "name": f'{t["name"]}, SC'}},
                  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
                      {"@type": "ListItem", "position": 1, "name": "Home", "item": f'{SITE}/'},
-                     {"@type": "ListItem", "position": 2, "name": "Where we build", "item": f'{SITE}/index.html#areas'},
-                     {"@type": "ListItem", "position": 3, "name": t['name'], "item": f'{SITE}/{t["file"]}'}]}})
+                     {"@type": "ListItem", "position": 2, "name": "Where we build", "item": f'{SITE}/#areas'},
+                     {"@type": "ListItem", "position": 3, "name": t['name'], "item": url(t["file"])}]}})
     title = f'Custom Home Builder in {t["name"]}, SC | {BRAND}'
     pre = f'<link rel="preload" as="image" href="img/w/{t["hero"][0]}-1600.webp">\n'
     return head(title, t['desc'], f'{SITE}/{t["file"]}', f'img/w/{t["hero"][0]}-1600.webp', pre) + chrome(t['file']) + body + tail(t['file'], ld)
@@ -333,10 +335,10 @@ def about_page():
     d = door('IV', 'Begin a home', 'Tell us about <em>the lot.</em>', LEDE_DOOR,
       qs=[('How is RAM Charleston related to RAM in Charlotte?', 'RAM Construction Charleston is a division of RAM Construction, the Charlotte design-build firm founded in 2004, with its own South Carolina license. Same team approach, same standards.'),
           ('Who will I deal with?', 'One project manager from first sketch to final walk-through, with a site meeting every week and a written recap after each one.'),
-          ('Is there a warranty?', "RAM's building contract carries a 10-year Quality Builders Warranty, backed by Liberty Mutual.")])
+          ('Is there a warranty?', "In Charlotte, RAM's building contract carries a 10-year Quality Builders Warranty backed by Liberty Mutual. Warranty terms for the Charleston division are confirmed in your contract.")])
     body = f'''{phero('About RAM', 'Twenty years in Charlotte. <em>A new chapter on the coast.</em>',
                  'RAM Construction began in Charlotte in 2004 as one firm: architects, building specialists and designers under one roof and one contract. RAM Construction Charleston brings that practice to the Lowcountry, with its own South Carolina license and the same people behind the drawings.',
-                 hero, meta=['Design-build since 2004', 'In-house architects and designers', '10-year Quality Builders Warranty'])}
+                 hero, meta=['Design-build since 2004', 'In-house architects and designers', 'Quality Builders Warranty in Charlotte'])}
 
 {ledger([('i', 'One firm, one drawing', 'Architects, designers and builders under one contract. The plan and the price come from the same table.'),
          ('ii', 'The budget comes early', 'Set before the plans are final, with the cost of every feature explained, so you decide what to keep with the number in front of you.'),
@@ -398,7 +400,7 @@ def about_page():
       <dl>
         <div><dt>Founded</dt><dd>2004, Charlotte, North Carolina</dd></div>
         <div><dt>Practice</dt><dd>In-house design-build: architects, building specialists, designers</dd></div>
-        <div><dt>Warranty</dt><dd>10-year Quality Builders Warranty, backed by Liberty Mutual</dd></div>
+        <div><dt>Warranty</dt><dd>10-year Quality Builders Warranty on RAM's Charlotte contracts, backed by Liberty Mutual · Charleston terms confirmed in your contract</dd></div>
         <div><dt>South Carolina</dt><dd>Residential builder license · number listed at launch</dd></div>
         <div><dt>Charleston line</dt><dd><a href="tel:+18430000000">(843) 000-0000</a> · issued at launch</dd></div>
         <div><dt>Parent</dt><dd><a href="https://www.ramconstructioninc.com">RAM Construction, Charlotte</a></dd></div>
@@ -420,7 +422,7 @@ def about_page():
 </main>
 '''
     desc = 'RAM Construction Charleston is the Lowcountry division of RAM Construction, the Charlotte design-build firm founded in 2004: architects, designers and builders under one contract, a fixed bid and a 3D walk-through before construction.'
-    ld = jsonld({"@context": "https://schema.org", "@type": "AboutPage", "name": f'About {BRAND}', "description": desc, "url": f'{SITE}/about.html',
+    ld = jsonld({"@context": "https://schema.org", "@type": "AboutPage", "name": f'About {BRAND}', "description": desc, "url": url("about.html"),
                  "mainEntity": {"@type": "GeneralContractor", "name": BRAND, "parentOrganization": {"@type": "Organization", "name": "RAM Construction", "url": "https://www.ramconstructioninc.com", "foundingDate": "2004"}}})
     pre = '<link rel="preload" as="image" href="img/w/porch-portrait-woman-golden-hour-1600.webp">\n'
     return head(f'About RAM Construction Charleston | Design-Build Since 2004', desc, f'{SITE}/about.html', 'img/w/porch-portrait-woman-golden-hour-1600.webp', pre) + chrome('about.html') + body + tail('about.html', ld)
@@ -450,7 +452,7 @@ GROUPS = [
  ('ram', 'iv', 'Working with RAM', [
    ('How is RAM Charleston related to RAM in Charlotte?', 'RAM Construction Charleston is a division of RAM Construction, the Charlotte design-build firm founded in 2004, with its own South Carolina license. Same team approach, same standards.'),
    ('Who will I deal with?', 'One project manager from first sketch to final walk-through, with a site meeting every week and a written recap after each one.'),
-   ('Is there a warranty?', 'RAM\'s building contract carries a 10-year Quality Builders Warranty, backed by Liberty Mutual, which screens builders for craftsmanship and financial stability.'),
+   ('Is there a warranty?', "In Charlotte, RAM's building contract carries a 10-year Quality Builders Warranty backed by Liberty Mutual. Warranty terms for the Charleston division are confirmed in your contract."),
    ('Renovate or rebuild?', 'It depends on the structure, the flood elevation and what you want the home to become. We assess the house and give you an honest answer on both paths.'),
    ('Where can I see your work?', 'The homepage gallery shows finished RAM homes in Charlotte, photographed as built. Charleston\'s own homes will join it as each one is completed; the Lowcountry scenes on this site are illustrative renderings and are marked as such.'),
  ]),
@@ -459,7 +461,7 @@ GROUPS = [
 def faq_page():
     hero = arch_img('open-living-room-stair-marsh-light', 1600, 900, 'A double-height open living room with tall windows to a screened porch, a white staircase and heart-pine floors', ratio='3/3.6', eager=True)
     index = ''.join(f'<li><a href="#{k}"><i>{n}</i> {t}</a></li>' for k, n, t, _ in GROUPS)
-    d = door('V', 'Begin a home', 'Still a question? <em>Ask it here.</em>', "Tell us about the lot, or just what you are weighing up. We'll come back within one business day.")
+    d = door('V', 'Begin a home', 'Still a question? <em>Ask it here.</em>', "Tell us about the lot, or just what you are weighing up. We'll come back to you.")
     groups = ''
     for k, n, t, qs in GROUPS:
         groups += f'''
@@ -488,7 +490,7 @@ def faq_page():
 </main>
 '''
     desc = 'Questions people ask before building a custom home in Charleston: lots and flood zones, how the fixed bid is set, the 3D walk-through, coastal design review, hurricanes and salt air, and how RAM Charleston relates to RAM in Charlotte.'
-    ld = jsonld({"@context": "https://schema.org", "@type": "WebPage", "name": f'Questions | {BRAND}', "description": desc, "url": f'{SITE}/faq.html'})
+    ld = jsonld({"@context": "https://schema.org", "@type": "WebPage", "name": f'Questions | {BRAND}', "description": desc, "url": url("faq.html")})
     pre = '<link rel="preload" as="image" href="img/w/open-living-room-stair-marsh-light-1600.webp">\n'
     return head('Questions Before You Build | RAM Construction Charleston', desc, f'{SITE}/faq.html', 'img/w/open-living-room-stair-marsh-light-1600.webp', pre) + chrome('faq.html') + body + tail('faq.html', ld)
 
@@ -498,7 +500,7 @@ def contact_page():
       <dl class="cways">
         <div><dt>Write</dt><dd><a href="mailto:hello@ramconstructionsc.com">hello@ramconstructionsc.com</a></dd></div>
         <div><dt>Meet</dt><dd>On your lot, or one you are considering. We come to you across Mount Pleasant, the islands and Daniel Island.</dd></div>
-        <div><dt>Then</dt><dd>A written note of what the lot allows within the week, and a design meeting when you are ready.</dd></div>
+        <div><dt>Then</dt><dd>A written note of what the lot allows, and a design meeting when you are ready.</dd></div>
       </dl>'''
     towns = ''.join(f'''      <a class="ctown rv{" d"+str(i) if i else ""}" href="{TOWNS[s]["file"]}">{arch_img(TOWNS[s]["hero"][0], 1600, 900, TOWNS[s]["hero"][3], ratio='3/3.4', sizes='(max-width:860px) 46vw, 22vw')}<span><small>{TOWNS[s]["county"].split(' ·')[0]}</small><b>{TOWNS[s]["name"]}</b></span></a>\n''' for i, s in enumerate(TOWN_ORDER))
     d = door('', 'Contact', 'Tell us about <em>the lot.</em>', LEDE_DOOR, page_id='contact', h_tag='h1', extra_left=extra).replace('<section class="door on-dark" id="contact">', '<section class="door door-page on-dark" id="contact">')
@@ -515,7 +517,7 @@ def contact_page():
 </main>
 '''
     desc = 'Contact RAM Construction Charleston about a custom home, coastal home or renovation in Mount Pleasant, Isle of Palms, Sullivan\'s Island or Daniel Island. We come back within one business day and meet you on the lot.'
-    ld = jsonld({"@context": "https://schema.org", "@type": "ContactPage", "name": f'Contact {BRAND}', "description": desc, "url": f'{SITE}/contact.html',
+    ld = jsonld({"@context": "https://schema.org", "@type": "ContactPage", "name": f'Contact {BRAND}', "description": desc, "url": url("contact.html"),
                  "mainEntity": {"@type": "GeneralContractor", "name": BRAND, "email": "hello@ramconstructionsc.com", "areaServed": ["Mount Pleasant, SC", "Isle of Palms, SC", "Sullivan's Island, SC", "Daniel Island, SC"]}})
     out = head('Contact RAM Construction Charleston | Begin a Home', desc, f'{SITE}/contact.html', 'img/w/daniel-island-waterfront-home-1200.webp') + chrome('contact.html') + body + tail('contact.html', ld)
     # the contact page's form is the page, not a reveal that waits
