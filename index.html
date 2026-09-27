@@ -290,16 +290,41 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 .marquee span::after{content:"";width:16px;height:20px;border:1.5px solid var(--amber);border-bottom:0;border-radius:var(--arch)}
 @keyframes slide{to{transform:translateX(-50%)}}
 
-/* ── coast (depth) ──────────────────────────────────────────────────── */
-.coast{padding:120px 0;background:var(--alabaster)}
-.coast-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}
-.coast-img{position:sticky;top:120px}
-.coast-img .arch{aspect-ratio:3/3.7}
-.ctable{width:100%;border-collapse:collapse;margin-top:40px}
-.ctable th{text-align:left;font:500 10.5px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--red);padding:0 0 14px;border-bottom:1px solid var(--black)}
-.ctable td{padding:20px 16px 20px 0;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.6;color:var(--muted)}
-.ctable td:first-child{font:600 21px/1.2 var(--serif);color:var(--black);width:30%}
-.ctable td:last-child{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);width:24%}
+/* ── coast: the datum. five conditions on a survey rail beside the photographs they govern ── */
+.coast{position:relative;background:var(--black-night);color:var(--alabaster);overflow:hidden;min-height:clamp(680px,92svh,900px);display:grid;grid-template-columns:60% 40%}
+.coast-photos{position:relative;overflow:hidden;background:#0d0d0f}
+.coast-ph{position:absolute;inset:0;opacity:0;transition:opacity 1.3s var(--ease)}
+.coast-ph.is-on{opacity:1}
+.coast-ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform 7s linear}
+.coast-ph.is-on img{transform:scale(1)}
+.coast-photos::after{content:"";position:absolute;inset:0;pointer-events:none;background:
+  linear-gradient(90deg,rgba(5,5,6,0) 68%,var(--black-night) 100%),
+  linear-gradient(0deg,rgba(5,5,6,.9) 0%,rgba(5,5,6,.42) 34%,rgba(5,5,6,0) 60%)}
+.coast-head{position:absolute;left:0;bottom:0;z-index:2;padding:0 48px 62px calc((100vw - var(--wrap)) / 2);max-width:calc(60vw - 24px)}
+.coast-head .h2{margin:22px 0 18px;font-size:clamp(38px,4.1vw,62px)}
+.coast-head .lede{max-width:42ch;font-size:17px}
+.coast-rail{display:flex;flex-direction:column;justify-content:center;padding:64px calc((100vw - var(--wrap)) / 2) 56px 0}
+.datum-lab{font:500 10.5px/1.5 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:rgba(243,243,243,.42);margin:0 0 26px 30px}
+.datum-lab i{font:italic 500 15px/1 var(--serif);color:var(--amber);letter-spacing:0;margin:0 .4em}
+.datum-list{border-left:1px solid var(--rule-lt)}
+.datum{position:relative;display:grid;grid-template-columns:58px 1fr;align-items:start;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--rule-lt);color:inherit;padding:21px 0 21px 30px;cursor:pointer;font:inherit}
+.datum:first-child{border-top:0}
+.datum::before{content:"";position:absolute;left:-5px;top:30px;width:9px;height:9px;border-radius:50%;background:var(--black-night);border:1px solid rgba(243,243,243,.5);transition:background .45s var(--ease),border-color .45s var(--ease),box-shadow .45s var(--ease)}
+.datum.is-open::before{background:var(--amber);border-color:var(--amber);box-shadow:0 0 0 6px rgba(226,60,65,.16)}
+.datum::after{content:"";position:absolute;left:-1px;top:0;width:1px;height:0;background:var(--amber)}
+.js .datum.is-open::after{animation:datumfill 4.6s linear forwards}
+@keyframes datumfill{to{height:100%}}
+.datum-n{font:italic 500 15px/1 var(--serif);color:rgba(243,243,243,.4);padding-top:8px;transition:color .45s var(--ease)}
+.datum.is-open .datum-n{color:var(--amber)}
+.datum-t{display:block;font:500 27px/1.15 var(--serif);color:rgba(243,243,243,.48);transition:color .45s var(--ease)}
+.datum.is-open .datum-t{color:var(--alabaster)}
+.datum-x{display:grid;grid-template-rows:0fr;transition:grid-template-rows .65s var(--ease)}
+.datum-x>span{display:block;min-height:0;overflow:hidden;font:300 15px/1.65 var(--sans);color:rgba(243,243,243,.74);max-width:36ch;padding-top:0;transition:padding-top .65s var(--ease)}
+.datum.is-open .datum-x{grid-template-rows:1fr}
+.datum.is-open .datum-x>span{padding-top:10px}
+.datum-w{display:block;margin-top:9px;font:500 11px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:rgba(243,243,243,.42);transition:color .45s var(--ease)}
+.datum.is-open .datum-w{color:var(--amber)}
+.datum:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
 
 /* ── process · four ruled columns, a photograph under each (black) ────── */
 .process{background:var(--black);padding:120px 0;color:var(--alabaster)}
@@ -427,6 +452,9 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 /* ── responsive ─────────────────────────────────────────────────────── */
 @media (max-width:1360px){.hdr-tel{display:none}.hdr-nav{gap:28px}}
 @media (max-width:1180px){
+  .coast{grid-template-columns:54% 46%}
+  .coast-head{max-width:calc(54vw - 24px);padding-right:32px}
+  .datum-t{font-size:24px}
   .hdr-nav,.hdr-cta{display:none}
   .hdr-row{grid-template-columns:auto 1fr auto;height:78px}
   .hdr.is-solid .hdr-row{height:70px}
@@ -478,8 +506,26 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .ledger-row{grid-template-columns:1fr}
   .ledger-item{border-left:0;padding:22px 0;border-top:1px solid var(--rule-lt)}
   .ledger-item:first-child{border-top:0}
+  .coast{display:block;min-height:0;padding-bottom:64px}
+  .coast-photos{aspect-ratio:4/5;max-height:72svh}
+  .coast-photos::after{background:linear-gradient(0deg,rgba(5,5,6,.92) 0%,rgba(5,5,6,.3) 30%,rgba(5,5,6,0) 52%)}
+  .coast-ph{opacity:0}
+  .coast-ph:first-child{opacity:1}
+  .coast-head{position:absolute;padding:0 0 28px;max-width:none;width:var(--wrap);left:16px}
+  .coast-head .h2{font-size:38px;margin:16px 0 0}
+  .coast-head .lede{display:none}
+  .coast-rail{padding:34px 0 0;width:var(--wrap);margin:0 auto}
+  .datum-lab{margin-left:22px;font-size:10px;letter-spacing:.2em}
+  .datum{grid-template-columns:44px 1fr;padding:18px 0 18px 22px}
+  .datum::before{top:27px}
+  .datum-t,.datum.is-open .datum-t{color:var(--alabaster);font-size:23px}
+  .datum-n,.datum.is-open .datum-n{color:var(--amber)}
+  .datum-x,.datum.is-open .datum-x{grid-template-rows:1fr}
+  .datum-x>span,.datum.is-open .datum-x>span{padding-top:8px;max-width:none}
+  .datum-w,.datum.is-open .datum-w{color:var(--amber)}
+  .js .datum.is-open::after{animation:none}
   .chapter-top{padding:90px 0 0}
-  .chapter-grid,.sec-head,.coast-grid,.faq-grid,.door-grid,.creds-row{grid-template-columns:1fr;gap:36px}
+  .chapter-grid,.sec-head,.faq-grid,.door-grid,.creds-row{grid-template-columns:1fr;gap:36px}
   .chapter-art{order:2;margin:0 0 -90px;width:82%}
   .chapter-copy{order:1;padding:0}
   .band-in{display:flex;flex-direction:column;gap:0;padding:130px 0 0}
@@ -492,7 +538,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .numbers-src{position:static;display:block;width:var(--wrap);margin:0 auto;padding:36px 0 26px}
   .sec-head{margin-bottom:44px}
   .sec-head .lede{justify-self:start;padding-bottom:0}
-  .process,.work,.coast,.faq,.door{padding:90px 0}
+  .process,.work,.faq,.door{padding:90px 0}
   .services{padding:0}
   .svc-src{padding:12px 16px 14px}
   .areas{padding-top:90px}
@@ -517,9 +563,6 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .window-grid{gap:36px}
   .pane-arch{aspect-ratio:4/3.6}
   .beats{gap:10px 18px}
-  .coast-img{position:static}
-  .ctable td:last-child{display:none}
-  .ctable td:first-child{width:40%;font-size:18px}
   .steps{grid-template-columns:1fr}
   .stepc{border-left:0;padding:36px 0 0}
   .stepc:nth-child(n+2){border-top:1px solid var(--rule-lt);margin-top:40px}
@@ -552,6 +595,8 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   .kicker::before{width:26px}
 }
 @media (prefers-reduced-motion:reduce){
+  .js .datum.is-open::after{animation:none}
+  .coast-ph img,.coast-ph.is-on img{transform:none;transition:none}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .w,.js .rv{opacity:1!important;transform:none!important}
   .js .hero-horn use{stroke-dashoffset:0}
@@ -743,23 +788,63 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
   </div></div>
 </section>
 
-<!-- ═════ coast knowledge ═════ -->
-<section class="coast" id="coast">
-  <div class="wrap coast-grid">
-    <div class="coast-img rv"><div class="arch"><img src="img/w/tidal-creek-marsh-aerial-dusk-1200.webp" width="1200" height="670" loading="lazy" alt="Illustrative aerial view of a tidal creek winding through spartina marsh with a private dock at dusk"></div></div>
-    <div class="rv d1">
+<!-- ═════ coast · the datum: five conditions on a survey rail, each with the scene it governs ═════ -->
+<section class="coast on-dark" id="coast">
+  <div class="coast-photos">
+    <div class="coast-ph is-on"><img src="img/w/tidal-creek-marsh-aerial-dusk-2400.webp" srcset="img/w/tidal-creek-marsh-aerial-dusk-1200.webp 1200w, img/w/tidal-creek-marsh-aerial-dusk-2400.webp 2400w" sizes="(max-width:860px) 100vw, 60vw" width="2400" loading="lazy" alt="Aerial view of a tidal creek winding through spartina marsh with a private dock at dusk"></div>
+    <div class="coast-ph"><img src="img/w/coast-storm-shutters-squall-1600.webp" srcset="img/w/coast-storm-shutters-squall-800.webp 800w, img/w/coast-storm-shutters-squall-1600.webp 1600w" sizes="(max-width:860px) 100vw, 60vw" width="1600" loading="lazy" alt="An elevated white Lowcountry home with green Bahama shutters as a squall line crosses the marsh sky"></div>
+    <div class="coast-ph"><img src="img/w/coast-salt-air-piazza-rail-1600.webp" srcset="img/w/coast-salt-air-piazza-rail-800.webp 800w, img/w/coast-salt-air-piazza-rail-1600.webp 1600w" sizes="(max-width:860px) 100vw, 60vw" width="1600" loading="lazy" style="object-position:50% 18%" alt="The corner of a white piazza rail with stainless fittings and a copper lantern, dunes and ocean haze beyond"></div>
+    <div class="coast-ph"><img src="img/w/coast-house-between-live-oaks-1600.webp" srcset="img/w/coast-house-between-live-oaks-800.webp 800w, img/w/coast-house-between-live-oaks-1600.webp 1600w" sizes="(max-width:860px) 100vw, 60vw" width="1600" loading="lazy" style="object-position:50% 58%" alt="A white custom home sited between two grand live oaks, their limbs reaching over the roof"></div>
+    <div class="coast-ph"><img src="img/w/drafting-table-lowcountry-drawings-1600.webp" srcset="img/w/drafting-table-lowcountry-drawings-800.webp 800w, img/w/drafting-table-lowcountry-drawings-1600.webp 1600w" sizes="(max-width:860px) 100vw, 60vw" width="1600" loading="lazy" style="object-position:50% 56%" alt="Architectural drawings of a Lowcountry home with a basswood model on a walnut drafting table"></div>
+    <div class="coast-head rv">
       <span class="eyebrow"><i>V</i> Building on the coast</span>
       <h2 class="h2">Handled in the drawings, <em>not at the end.</em></h2>
-      <table class="ctable">
-        <thead><tr><th>Condition</th><th>What we do</th><th>Where it applies</th></tr></thead>
-        <tbody>
-          <tr><td>Flood elevation</td><td>Check the lot against the current flood maps first, then set finished floor, foundation and venting from the first sketch.</td><td>Marsh lots · the islands</td></tr>
-          <tr><td>Hurricane wind</td><td>Impact-rated openings, a continuous load path and roof tie-downs specified in the drawings.</td><td>Every coastal home</td></tr>
-          <tr><td>Salt air</td><td>Stainless fasteners, marine-grade finishes and siding chosen to last on the coast.</td><td>Isle of Palms · Sullivan's</td></tr>
-          <tr><td>Grand trees</td><td>Survey the canopy before we draw, so the house is sited around the oaks.</td><td>Mount Pleasant</td></tr>
-          <tr><td>Design review</td><td>Prepare the drawings, elevations and 3D views each board asks to see.</td><td>Old Village · Sullivan's · Daniel Island</td></tr>
-        </tbody>
-      </table>
+      <p class="lede">A marsh lot asks five things of a house. We answer each one on paper, before the price is set.</p>
+    </div>
+  </div>
+  <div class="coast-rail rv d1">
+    <p class="datum-lab">What the lot asks <i>/</i> what the drawings answer</p>
+    <div class="datum-list" id="datum">
+      <button class="datum is-open" type="button" aria-expanded="true">
+        <span class="datum-n">01</span>
+        <span class="datum-b">
+          <span class="datum-t">Flood elevation</span>
+          <span class="datum-x"><span>Check the lot against the current flood maps first, then set finished floor, foundation and venting from the first sketch.</span></span>
+          <span class="datum-w">Marsh lots · the islands</span>
+        </span>
+      </button>
+      <button class="datum" type="button" aria-expanded="false">
+        <span class="datum-n">02</span>
+        <span class="datum-b">
+          <span class="datum-t">Hurricane wind</span>
+          <span class="datum-x"><span>Impact-rated openings, a continuous load path and roof tie-downs specified in the drawings.</span></span>
+          <span class="datum-w">Every coastal home</span>
+        </span>
+      </button>
+      <button class="datum" type="button" aria-expanded="false">
+        <span class="datum-n">03</span>
+        <span class="datum-b">
+          <span class="datum-t">Salt air</span>
+          <span class="datum-x"><span>Stainless fasteners, marine-grade finishes and siding chosen to last on the coast.</span></span>
+          <span class="datum-w">Isle of Palms · Sullivan’s</span>
+        </span>
+      </button>
+      <button class="datum" type="button" aria-expanded="false">
+        <span class="datum-n">04</span>
+        <span class="datum-b">
+          <span class="datum-t">Grand trees</span>
+          <span class="datum-x"><span>Survey the canopy before we draw, so the house is sited around the oaks.</span></span>
+          <span class="datum-w">Mount Pleasant</span>
+        </span>
+      </button>
+      <button class="datum" type="button" aria-expanded="false">
+        <span class="datum-n">05</span>
+        <span class="datum-b">
+          <span class="datum-t">Design review</span>
+          <span class="datum-x"><span>Prepare the drawings, elevations and 3D views each board asks to see.</span></span>
+          <span class="datum-w">Old Village · Sullivan’s · Daniel Island</span>
+        </span>
+      </button>
     </div>
   </div>
 </section>
@@ -908,8 +993,8 @@ mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setM(false)))
 const hdr=document.getElementById('hdr');const onS=()=>hdr.classList.toggle('is-solid',scrollY>80);addEventListener('scroll',onS,{passive:true});onS();
 /* accordions: hover, focus or click opens a panel; otherwise the panels take turns while in view */
 const wide=()=>matchMedia('(min-width:861px)').matches;const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-function accordion(root,sel,every){if(!root)return;const items=[...root.querySelectorAll(sel)];let cur=Math.max(0,items.findIndex(x=>x.classList.contains('is-open'))),hold=false,timer=0;
-  const openIt=i=>{cur=i;items.forEach((b,k)=>b.classList.toggle('is-open',k===i))};
+function accordion(root,sel,every,on){if(!root)return;const items=[...root.querySelectorAll(sel)];let cur=Math.max(0,items.findIndex(x=>x.classList.contains('is-open'))),hold=false,timer=0;
+  const openIt=i=>{cur=i;items.forEach((b,k)=>{b.classList.toggle('is-open',k===i);if(b.hasAttribute('aria-expanded'))b.setAttribute('aria-expanded',k===i)});if(on)on(i)};
   const start=()=>{clearInterval(timer);if(!calm)timer=setInterval(()=>{if(!hold&&wide())openIt((cur+1)%items.length)},every)};
   items.forEach((b,i)=>{b.addEventListener('mouseenter',()=>{hold=true;openIt(i)});b.addEventListener('focusin',()=>{hold=true;openIt(i)});
     b.addEventListener('click',e=>{if(wide()&&!b.classList.contains('is-open')){e.preventDefault();hold=true;openIt(i)}})});
@@ -917,6 +1002,7 @@ function accordion(root,sel,every){if(!root)return;const items=[...root.querySel
   new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():clearInterval(timer))).observe(root)}
 accordion(document.getElementById('acc'),'.area',3800);
 accordion(document.getElementById('svc'),'.svc-pane',4400);
+const dat=document.getElementById('datum');if(dat){const phs=[...document.querySelectorAll('.coast-ph')];accordion(dat,'.datum',4600,i=>phs.forEach((p,k)=>p.classList.toggle('is-on',k===i)))}
 /* the work slider: arrows, drag, keyboard, a progress rule */
 const tr=document.getElementById('track');if(tr){const bar=document.querySelector('.slider-bar i');
   const upd=()=>{const max=tr.scrollWidth-tr.clientWidth,f=tr.clientWidth/tr.scrollWidth;bar.style.width=(f*100)+'%';bar.style.left=(max>0?tr.scrollLeft/max*(100-f*100):0)+'%'};
